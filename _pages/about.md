@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 
-🌈 I am a final-year undergraduate student at Northeast Forestry University, and I will soon begin my doctoral studies at Northwestern Polytechnical University under the supervision of Prof. [Yanning Zhang](https://scholar.google.com.hk/citations?user=-wzlS7QAAAAJ&hl=zh-CN), an IEEE Fellow, and Prof. [Qingsen Yan](https://scholar.google.com.hk/citations?hl=zh-CN&user=BSGy3foAAAAJ). I am very glad to be supervised and collaborated with Dr. [Siteng Huang](https://kyonhuang.top/) from DAMO Academy and Asst. Prof. [Xuyang Liu]([http://www.zhanglinfeng.tech/](https://xuyang-liu16.github.io/)) from SCU.
+🌈 I am a final-year undergraduate student at Northeast Forestry University, and I will soon begin my doctoral studies at Northwestern Polytechnical University under the supervision of Prof. [Yanning Zhang](https://scholar.google.com.hk/citations?user=-wzlS7QAAAAJ&hl=zh-CN), an IEEE Fellow, and Prof. [Qingsen Yan](https://scholar.google.com.hk/citations?hl=zh-CN&user=BSGy3foAAAAJ). I am very glad to be supervised and collaborated with Dr. [Siteng Huang](https://kyonhuang.top/) from DAMO Academy and Master's student [Xuyang Liu]([http://www.zhanglinfeng.tech/](https://xuyang-liu16.github.io/)) from SCU.
 
 📌 My research interests span **Efficient Multi-modal Large Language Models**, including:
 
