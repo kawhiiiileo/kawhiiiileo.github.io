@@ -6,11 +6,11 @@ main:
   - title: "Publications"
     url: "/#-publications"
 
-  - title: "Resources"
-    url: "/#-resources"
+  # - title: "Resources"
+  #   url: "/#-resources"
 
-  - title: "Experience"
-    url: "/#-experience"
+  # - title: "Experience"
+  #   url: "/#-experience"
 
-  - title: "Services"
-    url: "/#-services"
+  # - title: "Services"
+  #   url: "/#-services"
