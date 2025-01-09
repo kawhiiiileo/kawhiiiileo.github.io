@@ -8,10 +8,7 @@ redirect_from:
 ---
 
 
-🌈 I am a second-year Master's student at [Sichuan University](https://en.scu.edu.cn/), under the supervision of Prof. [Honggang Chen](https://sites.google.com/view/honggangchen/). Currently, I am working as a research intern at [Taobao & Tmall Group](https://talent.taotian.com/), focusing on [Efficient MLLM](https://github.com/lijiannuist/Efficient-Multimodal-LLMs-Survey). <!--Previously, I had the honor of visiting the [VIP Lab](https://zhengfenglab.com/) at [SUSTech](https://www.sustech.edu.cn/en/), supervised by Prof. [Feng Zheng](https://faculty.sustech.edu.cn/?tagid=fengzheng&go=1&iscss=1&snapid=1&lang=en).--> Previously, I had the honor of visiting [MiLAB](https://milab.westlake.edu.cn/) at [Westlake University](https://www.westlake.edu.cn/), supervised by Prof. [Donglin Wang](https://en.westlake.edu.cn/faculty/donglin-wang.html). I am very glad to be supervised and collaborated with Dr. [Siteng Huang](https://kyonhuang.top/) from DAMO Academy and Asst. Prof. [Linfeng Zhang](http://www.zhanglinfeng.tech/) from SJTU.
-
-
-I am a final-year undergraduate student at Northeast Forestry University, and I will soon begin my doctoral studies at Northwestern Polytechnical University under the supervision of Prof. [Yanning Zhang](https://scholar.google.com.hk/citations?user=-wzlS7QAAAAJ&hl=zh-CN), an IEEE Fellow, and Prof. [Qingsen Yan](https://scholar.google.com.hk/citations?hl=zh-CN&user=BSGy3foAAAAJ). I am very glad to be supervised and collaborated with Dr. [Siteng Huang](https://kyonhuang.top/) from DAMO Academy and Asst. Prof. [Xuyang Liu]([http://www.zhanglinfeng.tech/](https://xuyang-liu16.github.io/)) from SCU.
+🌈 I am a final-year undergraduate student at Northeast Forestry University, and I will soon begin my doctoral studies at Northwestern Polytechnical University under the supervision of Prof. [Yanning Zhang](https://scholar.google.com.hk/citations?user=-wzlS7QAAAAJ&hl=zh-CN), an IEEE Fellow, and Prof. [Qingsen Yan](https://scholar.google.com.hk/citations?hl=zh-CN&user=BSGy3foAAAAJ). I am very glad to be supervised and collaborated with Dr. [Siteng Huang](https://kyonhuang.top/) from DAMO Academy and Asst. Prof. [Xuyang Liu]([http://www.zhanglinfeng.tech/](https://xuyang-liu16.github.io/)) from SCU.
 
 📌 My research interests span **Efficient Multi-modal Large Language Models**, including:
 
@@ -19,8 +16,6 @@ I am a final-year undergraduate student at Northeast Forestry University, and I 
 * **Adaptation**: [parameter-efficient transfer learning](https://github.com/synbol/Awesome-Parameter-Efficient-Transfer-Learning) and [model acceleration](https://github.com/MingSun-Tse/Efficient-Deep-Learning).  
 * **Reconstruction**: [super-resolution](https://github.com/ChaofWang/Awesome-Super-Resolution) and [image quality assessment](https://github.com/chaofengc/Awesome-Image-Quality-Assessment).
 * **Generation**: [text-to-image generation](https://github.com/AlonzoLeeeooo/awesome-text-to-image-studies) and [text-to-video generation](https://github.com/soraw-ai/Awesome-Text-to-Video-Generation).
-
-📢 Recently, I am focusing on **[Token Reduction for Model Compression](https://github.com/xuyang-liu16/Awesome-Token-Reduction-for-Model-Compression)**. Feel free to reach out to me at `liuxuyang@stu.scu.edu.cn`, if you are interested in collaborating with me.
 
 ## 🔥 News
 
