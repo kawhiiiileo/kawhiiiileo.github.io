@@ -10,6 +10,9 @@ redirect_from:
 
 🌈 I am a second-year Master's student at [Sichuan University](https://en.scu.edu.cn/), under the supervision of Prof. [Honggang Chen](https://sites.google.com/view/honggangchen/). Currently, I am working as a research intern at [Taobao & Tmall Group](https://talent.taotian.com/), focusing on [Efficient MLLM](https://github.com/lijiannuist/Efficient-Multimodal-LLMs-Survey). <!--Previously, I had the honor of visiting the [VIP Lab](https://zhengfenglab.com/) at [SUSTech](https://www.sustech.edu.cn/en/), supervised by Prof. [Feng Zheng](https://faculty.sustech.edu.cn/?tagid=fengzheng&go=1&iscss=1&snapid=1&lang=en).--> Previously, I had the honor of visiting [MiLAB](https://milab.westlake.edu.cn/) at [Westlake University](https://www.westlake.edu.cn/), supervised by Prof. [Donglin Wang](https://en.westlake.edu.cn/faculty/donglin-wang.html). I am very glad to be supervised and collaborated with Dr. [Siteng Huang](https://kyonhuang.top/) from DAMO Academy and Asst. Prof. [Linfeng Zhang](http://www.zhanglinfeng.tech/) from SJTU.
 
+
+I am a final-year undergraduate student at Northeast Forestry University, and I will soon begin my doctoral studies at Northwestern Polytechnical University under the supervision of Prof. [Yanning Zhang](https://scholar.google.com.hk/citations?user=-wzlS7QAAAAJ&hl=zh-CN), an IEEE Fellow, and Prof. [Qingsen Yan](https://scholar.google.com.hk/citations?hl=zh-CN&user=BSGy3foAAAAJ). I am very glad to be supervised and collaborated with Dr. [Siteng Huang](https://kyonhuang.top/) from DAMO Academy and Asst. Prof. [Xuyang Liu]([http://www.zhanglinfeng.tech/](https://xuyang-liu16.github.io/)) from SCU.
+
 📌 My research interests span **Efficient Multi-modal Large Language Models**, including:
 
 * **Discrimination**: [visual grounding](https://github.com/TheShadow29/awesome-grounding) and [referring video object segmentation](https://github.com/gaomingqi/Awesome-Video-Object-Segmentation).
