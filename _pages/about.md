@@ -44,6 +44,7 @@ Please find my full publications on my [Google Scholar](https://scholar.google.c
 ### Preprints & Under Submission
 <a href="https://arxiv.org/abs/2411.17686" target="_blank"><img src="https://img.shields.io/badge/arXiv-2411.17686-B31B1B?style=flat-square"></a> Yuhang Han<sup>\*</sup>, <u>Xuyang Liu</u><sup>\*</sup>, Pengxiang Ding, Donglin Wang, Honggang Chen, Qingsen Yan, Siteng Huang &quot;**Rethinking Token Reduction in MLLMs: Towards a Unified Paradigm for Training-Free Acceleration**&quot;. *arXiv preprint arXiv:2411.17686*. [[paper](https://arxiv.org/pdf/2411.17686)] [[page](https://ficoco-accelerate.github.io/)] [[code](https://github.com/kawhiiiileo/FiCoCo)]
 
+<!---
 ## 🤗 Resources
 Please find my full repositories on my [GitHub](https://github.com/xuyang-liu16) profile. <a href="https://github.com/xuyang-liu16" target="_blank"><img src="https://img.shields.io/github/stars/xuyang-liu16.svg?style=social" alt="GitHub"></a>
 
@@ -77,3 +78,4 @@ Please find my full repositories on my [GitHub](https://github.com/xuyang-liu16)
 * ACM International Conference on Multimedia ([MM](https://2024.acmmm.org/))
 * ACM International Conference on Multimedia Retrieval ([ICMR](http://icmr2024.org/))
 
+-->
