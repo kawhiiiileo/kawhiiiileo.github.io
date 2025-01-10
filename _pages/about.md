@@ -13,8 +13,8 @@ redirect_from:
 📌My research interests include, but are not limited to, **efficient large model inference, parameter-efficient fine-tuning (PEFT) based on event cameras, and object detection**.
 
 ## 📳 News
-
-* **2024.11.17**: We release our work [FiCoCo](https://ficoco-accelerate.github.io/) which proposes a **unified paradigm** to demystify the popular works and guide the future designs of training-free token reduction for MLLMs.
+* **2025.01.10**: 🎇🎇 We release our latest work [GlobalCom<sup>2</sup>](https://arxiv.org/abs/2501.05179), a "global-to-local" approach for training-free acceleration of **high-resolution MLLMs**. [Code](https://github.com/xuyang-liu16/GlobalCom2) is available! 
+* **2024.11.17**: 🚀🚀 We release our work [FiCoCo](https://ficoco-accelerate.github.io/) which proposes a **unified paradigm** to demystify the popular works and guide the future designs of training-free token reduction for MLLMs. 
 
 ## 📝 Publications 
 Please find my full publications on my [Google Scholar](https://scholar.google.com.hk/citations?hl=zh-CN&user=zggQZNAAAAAJ) profile.<a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=zggQZNAAAAAJ" target="_blank"><img src="https://img.shields.io/badge/Paper%20Citations-18-blue?logo=googlescholar&style=social" alt="Google Scholar"></a>
@@ -38,6 +38,7 @@ Please find my full publications on my [Google Scholar](https://scholar.google.c
 <a href="https://ieeexplore.ieee.org/document/10742110" target="_blank"><img src="https://img.shields.io/badge/JSTARS-2024-green?style=flat-square"></a> Yuqi Liu, Enshuo Zhu, Qinghe Wang, Junhong Li, Shujun Liu, Yaowen Hu, <u>Yuhang Han</u>, Renxiang Guan, Guoxiong Zhou &quot;**Spatial-Spectral Adaptive Graph Convolutional Subspace Clustering for Hyperspectral Image**&quot;. *IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing*, 2024. (**CAAI B & Q1**) [[paper](https://ieeexplore.ieee.org/document/10757387)]
 
 ### Preprints & Under Submission
+<a href="https://arxiv.org/abs/2501.05179" target="_blank"><img src="https://img.shields.io/badge/arXiv-2501.05179-B31B1B?style=flat-square"></a> Xuyang Liu, Ziming Wang, <u>Yuhang Han</u>, Yingyao Wang, Jiale Yuan, Jun Song, Bo Zheng, Linfeng Zhang, Siteng Huang, Honggang Chen &quot;**Compression with Global Guidance: Towards Training-free High-Resolution MLLMs Acceleration**&quot;. *arXiv preprint arXiv:2501.05179*. [[paper](https://arxiv.org/pdf/2501.05179)] [[code](https://github.com/xuyang-liu16/GlobalCom2)]
 <a href="https://arxiv.org/abs/2411.17686" target="_blank"><img src="https://img.shields.io/badge/arXiv-2411.17686-B31B1B?style=flat-square"></a> <u>Yuhang Han</u><sup>\*</sup>, Xuyang Liu<sup>\*</sup>, Pengxiang Ding, Donglin Wang, Honggang Chen, Qingsen Yan, Siteng Huang &quot;**Rethinking Token Reduction in MLLMs: Towards a Unified Paradigm for Training-Free Acceleration**&quot;. *arXiv preprint arXiv:2411.17686*. [[paper](https://arxiv.org/pdf/2411.17686)] [[page](https://ficoco-accelerate.github.io/)] [[code](https://github.com/kawhiiiileo/FiCoCo)]
 
 <!---
