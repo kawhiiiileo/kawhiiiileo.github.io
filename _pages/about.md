@@ -14,12 +14,12 @@ redirect_from:
 
 ## 📳 News
 ---
-### **2025.01.10**  
+### <span style="color: #FF5733;">**2025.01.10**</span>
 🎇🎇 **[GlobalCom<sup>2</sup>](https://arxiv.org/abs/2501.05179)** is released!  
 A **"global-to-local" approach** for **training-free acceleration** of high-resolution MLLMs.  
 👉 **[Code Available Here](https://github.com/xuyang-liu16/GlobalCom2)**  
 
-### **2024.11.17**  
+### <span style="color: #FF5733;">**2025.11.17**</span>
 🚀🚀 **[FiCoCo](https://ficoco-accelerate.github.io/)** is now live!  
 Introducing a **unified paradigm** to demystify popular works and guide future designs for **training-free token reduction** in MLLMs.
 
