@@ -13,19 +13,11 @@ redirect_from:
 📌My research interests include, but are not limited to, **efficient large model inference, parameter-efficient fine-tuning (PEFT) based on event cameras, and object detection**.
 
 ## 📳 News
-* **2025.01.10**: 🎇🎇 We release our latest work [GlobalCom<sup>2</sup>](https://arxiv.org/abs/2501.05179), a "global-to-local" approach for training-free acceleration of **high-resolution MLLMs**. [Code](https://github.com/xuyang-liu16/GlobalCom2) is available! 
-* **2024.11.17**: 🚀🚀 We release our work [FiCoCo](https://ficoco-accelerate.github.io/) which proposes a **unified paradigm** to demystify the popular works and guide the future designs of training-free token reduction for MLLMs. 
-
-# 📢 Latest Updates
-
 ---
-
 ### **2025.01.10**  
 🎇🎇 **[GlobalCom<sup>2</sup>](https://arxiv.org/abs/2501.05179)** is released!  
 A **"global-to-local" approach** for **training-free acceleration** of high-resolution MLLMs.  
 👉 **[Code Available Here](https://github.com/xuyang-liu16/GlobalCom2)**  
-
----
 
 ### **2024.11.17**  
 🚀🚀 **[FiCoCo](https://ficoco-accelerate.github.io/)** is now live!  
