@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-🎆 🎓 I am currently a **first-year Ph.D. student** at **Northwestern Polytechnical University (NPU)**,  co-advised by Prof. [Yanning Zhang](https://scholar.google.com.hk/citations?user=-wzlS7QAAAAJ&hl=zh-CN) (IEEE Fellow) and  Prof. [Qingsen Yan](https://scholar.google.com.hk/citations?hl=zh-CN&user=BSGy3foAAAAJ).  I am also fortunate to collaborate with  Prof. [Linfeng Zhang](https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN) from **Shanghai Jiao Tong University**,  Dr. [Siteng Huang](https://kyonhuang.top/) from **DAMO Academy**,  Master’s student [Xuyang Liu](https://xuyang-liu16.github.io/) from **Sichuan University (SCU)**.
+🎆 🎓 I am currently a **first-year Ph.D. student** at **Northwestern Polytechnical University (NPU)**,  co-advised by Prof. [Yanning Zhang](https://scholar.google.com.hk/citations?user=-wzlS7QAAAAJ&hl=zh-CN) (IEEE Fellow) and  Prof. [Qingsen Yan](https://scholar.google.com.hk/citations?hl=zh-CN&user=BSGy3foAAAAJ).  I am also fortunate to collaborate with  Prof. [Linfeng Zhang](https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN) from **Shanghai Jiao Tong University**,  Dr. [Siteng Huang](https://kyonhuang.top/) from **DAMO Academy** and Master’s student [Xuyang Liu](https://xuyang-liu16.github.io/) from **Sichuan University (SCU)**.
 
 📌 **Research Interests:**  
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
