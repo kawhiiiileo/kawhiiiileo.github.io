@@ -59,38 +59,3 @@ To be update.
   * Advisor: Prof. **Linfeng Zhang**  
   * Time: October 2025 – Present
   * Topic: *DLLM-Remasks*
-<!---
-## 🤗 Resources
-Please find my full repositories on my [GitHub](https://github.com/xuyang-liu16) profile. <a href="https://github.com/xuyang-liu16" target="_blank"><img src="https://img.shields.io/github/stars/xuyang-liu16.svg?style=social" alt="GitHub"></a>
-
-* [Awesome Generation Acceleration](https://github.com/xuyang-liu16/Awesome-Generation-Acceleration) [![GitHub](https://img.shields.io/github/stars/xuyang-liu16/Awesome-Generation-Acceleration.svg?style=social)](https://github.com/xuyang-liu16/Awesome-Generation-Acceleration.git)
-  * Duty: Owner.
-  * Description: An open-source repository that curates a collection of recent awesome papers on AIGC acceleration.
- 
-* [Awesome Token Reduction for Model Compression](https://github.com/xuyang-liu16/Awesome-Token-Reduction-for-Model-Compression) [![GitHub](https://img.shields.io/github/stars/xuyang-liu16/Awesome-Token-Reduction-for-Model-Compression.svg?style=social)](https://github.com/xuyang-liu16/Awesome-Token-Reduction-for-Model-Compression.git)
-  * Duty: Owner.
-  * Description: An open-source repository that curates a collection of recent awesome papers on token reduction for model compression.
- 
-* [Awesome Parameter-Efficient Transfer Learning](https://github.com/synbol/Awesome-Parameter-Efficient-Transfer-Learning) [![GitHub](https://img.shields.io/github/stars/synbol/Awesome-Parameter-Efficient-Transfer-Learning.svg?style=social)](https://github.com/synbol/Awesome-Parameter-Efficient-Transfer-Learning.git)
-  * Duty: Contributor.
-  * Description: An open-source repository that curates a collection of recent awesome papers on parameter-efficient transfer learning.
-
-
-
-## 💻 Experience
-* Research Intern - **Taobao & Tmall Group, Alibaba Group**, Beijing
-  * Time: July 2024 - Present.
-  * Thesis: *Efficient Multi-modal Large Language Models*.
-* Research Intern - **Machine Intelligence Laboratory, Westlake University**, Hangzhou
-  * Time: Mar 2023 - Sep 2023.
-  * Thesis: *Zero-shot Transfer of Vision-language Models*.
-  * Supervisers: Dr. [Siteng Huang](https://kyonhuang.top/) and Prof. [Donglin Wang](https://en.westlake.edu.cn/faculty/donglin-wang.html).
-   
-
-## 📠 Services
-
-### Conference Reviewer
-* ACM International Conference on Multimedia ([MM](https://2024.acmmm.org/))
-* ACM International Conference on Multimedia Retrieval ([ICMR](http://icmr2024.org/))
-
--->
