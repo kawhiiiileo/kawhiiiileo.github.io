@@ -15,7 +15,7 @@ redirect_from:
 
 ## 📳 News
 
-* **2025.01.20**: 🎉🎉 Two papers have been accepted to **AAAI 2026**!  
+* **2025.11.08**: 🎉🎉 Two papers have been accepted to **AAAI 2026**!  
   - *Compression with Global Guidance: Towards Training-free High-Resolution MLLMs Acceleration*  
   - *Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration*  
   Congratulations to all collaborators!
@@ -51,7 +51,11 @@ Please find my full publications on my [Google Scholar](https://scholar.google.c
 ### Preprints & Under Submission
 To be update.
 
-
+## 💻 Experience
+* Research Assistant — **EPIC Lab, Shanghai Jiao Tong University**, Shanghai  
+  * Advisor: Prof. **Linfeng Zhang**  
+  * Time: October 2025 – Present
+  * Topic: *DLLM-Remasks*
 <!---
 ## 🤗 Resources
 Please find my full repositories on my [GitHub](https://github.com/xuyang-liu16) profile. <a href="https://github.com/xuyang-liu16" target="_blank"><img src="https://img.shields.io/github/stars/xuyang-liu16.svg?style=social" alt="GitHub"></a>
