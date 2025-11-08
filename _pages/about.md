@@ -9,9 +9,13 @@ redirect_from:
 
 
 
-🎆 I will soon begin my doctoral studies at Northwestern Polytechnical University under the supervision of Prof. [Yanning Zhang](https://scholar.google.com.hk/citations?user=-wzlS7QAAAAJ&hl=zh-CN), an IEEE Fellow, and Prof. [Qingsen Yan](https://scholar.google.com.hk/citations?hl=zh-CN&user=BSGy3foAAAAJ). I am very glad to be supervised and collaborated with Dr. [Siteng Huang](https://kyonhuang.top/) from DAMO Academy, Master's student [Xuyang Liu](https://xuyang-liu16.github.io/) from SCU and Master's student [Renxiang Guan](https://github.com/GuanRX) from NUDT.
+🎆 🎓 I am currently a **first-year Ph.D. student** at **Northwestern Polytechnical University (NPU)**,  co-advised by Prof. [Yanning Zhang](https://scholar.google.com.hk/citations?user=-wzlS7QAAAAJ&hl=zh-CN) (IEEE Fellow) and  Prof. [Qingsen Yan](https://scholar.google.com.hk/citations?hl=zh-CN&user=BSGy3foAAAAJ).  I am also fortunate to collaborate with  
+Prof. [Linfeng Zhang](https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN) from **Shanghai Jiao Tong University**,  Dr. [Siteng Huang](https://kyonhuang.top/) from **DAMO Academy**,  Master’s student [Xuyang Liu](https://xuyang-liu16.github.io/) from **Sichuan University (SCU)**.
 
-📌My research interests include, but are not limited to, **efficient large model inference, parameter-efficient fine-tuning (PEFT) based on event cameras, and object detection**.
+📌 **Research Interests:**  
+- ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
+- 🎯 *Event-based Object Detection* — exploring sparse spatiotemporal representations  
+- 🧠 *dLLM ReMask* — dynamic remask
 
 ## 📳 News
 
