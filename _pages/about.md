@@ -17,7 +17,7 @@ redirect_from:
 
 * **2025.01.20**: 🎉🎉 Two papers have been accepted to **AAAI 2026**!  
   - *Compression with Global Guidance: Towards Training-free High-Resolution MLLMs Acceleration*  
-  - *Rethinking Token Reduction in MLLMs: Towards a Unified Paradigm for Training-Free Acceleration*  
+  - *Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration*  
   Congratulations to all collaborators!
 
 * **2025.01.10**: 🎇🎇 We release our latest work [GlobalCom<sup>2</sup>](https://arxiv.org/abs/2501.05179), a "global-to-local" approach for training-free acceleration of **high-resolution MLLMs**. [Code](https://github.com/xuyang-liu16/GlobalCom2) is available!
@@ -34,7 +34,7 @@ Please find my full publications on my [Google Scholar](https://scholar.google.c
 ### Conference Papers
 <a href="https://arxiv.org/abs/2501.05179" target="_blank"><img src="https://img.shields.io/badge/AAAI-2026-blue?style=flat-square"></a> Xuyang Liu, Ziming Wang, <u>**Yuhang Han**</u>, Yingyao Wang, Jiale Yuan, Jun Song, Bo Zheng, Linfeng Zhang, Siteng Huang, Honggang Chen &quot;**Compression with Global Guidance: Towards Training-free High-Resolution MLLMs Acceleration**&quot;. *Association for the Advancement of Artificial Intelligence*, 2025. (**CCF A**) [[paper](https://arxiv.org/pdf/2501.05179)] [[code](https://github.com/xuyang-liu16/GlobalCom2)]
 
-<a href="https://arxiv.org/abs/2411.17686" target="_blank"><img src="https://img.shields.io/badge/AAAI-2026-blue?style=flat-square"></a> <u>**Yuhang Han**</u><sup>\*</sup>, Xuyang Liu<sup>\*</sup>, Pengxiang Ding, Donglin Wang, Honggang Chen, Qingsen Yan, Siteng Huang &quot;**Rethinking Token Reduction in MLLMs: Towards a Unified Paradigm for Training-Free Acceleration**&quot;. *Association for the Advancement of Artificial Intelligence*, 2025. (**CCF A**) [[paper](https://arxiv.org/pdf/2411.17686)] [[page](https://ficoco-accelerate.github.io/)] [[code](https://github.com/kawhiiiileo/FiCoCo)]
+<a href="https://arxiv.org/abs/2411.17686" target="_blank"><img src="https://img.shields.io/badge/AAAI-2026-blue?style=flat-square"></a> <u>**Yuhang Han**</u><sup>\*</sup>, Xuyang Liu<sup>\*</sup>, Pengxiang Ding, Donglin Wang, Honggang Chen, Qingsen Yan, Siteng Huang &quot;**Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration**&quot;. *Association for the Advancement of Artificial Intelligence*, 2025. (**CCF A**) [[paper](https://arxiv.org/pdf/2411.17686)] [[page](https://ficoco-accelerate.github.io/)] [[code](https://github.com/kawhiiiileo/FiCoCo)]
 
 <a href="https://ieeexplore.ieee.org/document/10445945" target="_blank"><img src="https://img.shields.io/badge/ICIC-2024-blue?style=flat-square"></a> Junhong Li, Renxiang Guan, <u>**Yuhang Han**</u>, Yaowen Hu, Zihao Li, Yanyan Wu, Ziwei Xu, Xianju Li &quot;**Superpixel-based dual-neighborhood contrastive graph autoencoder for deep subspace clustering of hyperspectral image**&quot;. In *International Conference on Intelligent Computing (ICIC)*, 2024. (**CCF C**) [[paper](https://link.springer.com/chapter/10.1007/978-981-97-5597-4_16)]
 
