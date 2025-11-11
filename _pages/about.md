@@ -15,7 +15,6 @@ redirect_from:
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
 - 🎯 *Event-based Object Detection* — exploring sparse spatiotemporal representations  
 - 🧠 *dLLM ReMask* — dynamic remask
-
 ## 📳 News
 
 * **2025.11.08**: 🎉🎉 Two papers have been accepted to **AAAI 2026**!  
