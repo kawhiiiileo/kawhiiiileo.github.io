@@ -51,7 +51,16 @@ Please find my full publications on my [Google Scholar](https://scholar.google.c
 <a href="https://ieeexplore.ieee.org/document/10742110" target="_blank"><img src="https://img.shields.io/badge/JSTARS-2024-green?style=flat-square"></a> Yuqi Liu, Enshuo Zhu, Qinghe Wang, Junhong Li, Shujun Liu, Yaowen Hu, <u>Yuhang Han</u>, Renxiang Guan, Guoxiong Zhou &quot;**Spatial-Spectral Adaptive Graph Convolutional Subspace Clustering for Hyperspectral Image**&quot;. *IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing*, 2024. (**CAAI B & Q1**) [[paper](https://ieeexplore.ieee.org/document/10757387)]
 
 ### Preprints & Under Submission
-To be update.
+<a href="https://arxiv.org/abs/2509.11361" target="_blank">
+  <img src="https://img.shields.io/badge/arXiv-2509.11361-B31B1B?style=flat-square">
+</a> 
+<u><b>Yuhang Han</b></u><sup>†</sup>, Yichen Han, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He<sup>📧</sup>, Tianyu Shi<sup>📧</sup>,  
+"**MAPGD: Multi-Agent Prompt Gradient Descent for Collaborative Prompt Optimization**".  
+*Under review* **[CCF-B]**  
+[[paper](https://arxiv.org/pdf/2509.11361)] [[code](https://github.com/kawhiiiileo/MAPGD)]  
+<a href="https://github.com/kawhiiiileo/MAPGD" target="_blank">
+  <img src="https://img.shields.io/github/stars/kawhiiiileo/MAPGD?style=social">
+</a>
 
 ## 💻 Experience
 * Research Assistant — **EPIC Lab, Shanghai Jiao Tong University**, Shanghai  
