@@ -21,8 +21,7 @@ redirect_from:
   - *Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration*  
   Congratulations to all collaborators!
 * **2025.10.02**: 🎉 I have joined the **EPIC Lab at Shanghai Jiao Tong University** as a research assistant!  
-  I will be exploring acceleration strategies for diffusion-based large language models, including remasking techniques and reinforcement-learning-driven optimization methods.  
-  Looking forward to this exciting journey ahead!
+  I will be exploring acceleration strategies for diffusion-based large language models, including remasking techniques and reinforcement-learning-driven optimization methods. Looking forward to this exciting journey ahead!
 
 * **2025.01.10**: 🎇🎇 We release our latest work [GlobalCom<sup>2</sup>](https://arxiv.org/abs/2501.05179), a "global-to-local" approach for training-free acceleration of **high-resolution MLLMs**. [Code](https://github.com/xuyang-liu16/GlobalCom2) is available!
  
