@@ -24,9 +24,9 @@ author:
   avatar           : "profile.png"
   name             : "Yuhang Han"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D.@NWPU"
-  location         : "Xi'an, China"
-  employer         : "NWPU"
+  bio              : ""
+  location         : "Shang hai, China"
+  employer         : "SJTU"
   uri              : # URL
   email            : "hanyh@nefu.edu.cn" 
 
