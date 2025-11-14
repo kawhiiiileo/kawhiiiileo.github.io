@@ -13,8 +13,7 @@ redirect_from:
 
 📌 **Research Interests:**  
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
-- 🎯 *Event-based Object Detection* — exploring sparse spatiotemporal representations  
-- 🧠 *dLLM ReMask* — dynamic remask
+- 🧠 *dLLM ReMask* — RL-based remask strategy
 ## 📳 News
 
 * **2025.11.08**: 🎉🎉 Two papers have been accepted to **AAAI 2026**!  
