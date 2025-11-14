@@ -54,10 +54,7 @@ Please find my full publications on my [Google Scholar](https://scholar.google.c
 <a href="https://arxiv.org/abs/2509.11361" target="_blank">
   <img src="https://img.shields.io/badge/arXiv-2405.14700-B31B1B?style=flat-square">
 </a>
-Yichen Han, <u>Yuhang Han</u>, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He<sup>📧</sup>, Tianyu Shi<sup>📧</sup>,  
-"**Sparse-Tuning: Adapting Vision Transformers with Efficient Fine-tuning and Inference**".  
-*arXiv preprint arXiv:2405.14700*.  
-[[paper](https://arxiv.org/abs/2509.11361)] [[github](https://github.com/kawhiiiileo/MAPGD)]
+Yichen Han, <u>Yuhang Han</u>, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He<sup>📧</sup>, Tianyu Shi<sup>📧</sup>,  [[paper](https://arxiv.org/abs/2509.11361)] [[github](https://github.com/kawhiiiileo/MAPGD)]
 
 
 
