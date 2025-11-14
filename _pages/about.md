@@ -58,3 +58,10 @@ To be update.
   * Advisor: Prof. **Linfeng Zhang**  
   * Time: October 2025 – Present
   * Topic: *DLLM-Remasks*
+  * Research Output: To be announced — stay tuned!
+* Research Assistant — **MiLab, Westlake University**, Hangzhou  
+  * Advisors: Dr. **Siteng Huang**, Prof. **Donglin Wang**  
+  * Time: Aug. 2024 – Dec. 2025  
+  * Topic: *Efficient Multimodal Large Language Model*  
+  * Research Output: *FiCoCo* [[GitHub](https://github.com/kawhiiiileo/FiCoCo)] [[Paper](https://arxiv.org/pdf/2411.17686)]
+
