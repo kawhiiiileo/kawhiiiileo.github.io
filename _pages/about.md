@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-🎆 🎓 🎆 🎓 I recently completed my bachelor's degree and am currently serving as a research assistant at the **EPIC Lab, Shanghai Jiao Tong University**, working under the mentorship of Prof. [Linfeng Zhang](https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN). I am also fortunate to collaborate with Dr. [Siteng Huang](https://kyonhuang.top/) at **DAMO Academy** and Master’s student [Xuyang Liu](https://xuyang-liu16.github.io/) from **Sichuan University (SCU)**.
+🎆 🎓 🎆 🎓 I obtained a Bachelor of Engineering degree in Communication Engineering from [<img src="../images/NEFU_FLAG.png" alt="NEFU Logo" style="width: 20px; height: auto; vertical-align: middle; margin-right: 5px;">Northeast Forestry University](https://www.nefu.edu.cn/). Now I am currently serving as a research assistant at the **EPIC Lab, Shanghai Jiao Tong University**, working under the mentorship of Prof. [Linfeng Zhang](https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN). I am also fortunate to collaborate with Dr. [Siteng Huang](https://kyonhuang.top/) at **DAMO Academy** and Master’s student [Xuyang Liu](https://xuyang-liu16.github.io/) from **Sichuan University (SCU)**.
 
 📌 **Research Interests:**  
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
