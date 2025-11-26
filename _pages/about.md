@@ -11,7 +11,7 @@ redirect_from:
 
 📌 **Research Interests:**  
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
-- 🧠 *dLLM ReMask* — RL-based remask strategy
+- 🧠 *DLLM* — RL-based optimization strategy
 ## 📳 News
 
 * **2025.11.08**: 🎉🎉 Two papers have been accepted to **AAAI 2026**!  
@@ -58,11 +58,11 @@ Please find my full publications on my [Google Scholar](https://scholar.google.c
 * Research Assistant — **EPIC Lab, Shanghai Jiao Tong University**, Shanghai  
   * Advisor: Prof. **Linfeng Zhang**  
   * Time: October 2025 – Present
-  * Topic: *DLLM-Remasks*
+  * Topic: *RL-based DLLM*
   * Research Output: To be announced — stay tuned!
 * Research Assistant — **MiLab, Westlake University**, Hangzhou  
   * Advisors: Dr. **Siteng Huang**, Prof. **Donglin Wang**  
   * Time: Aug. 2024 – Dec. 2025  
   * Topic: *Efficient Multimodal Large Language Model*  
-  * Research Output: *FiCoCo* [[GitHub](https://github.com/kawhiiiileo/FiCoCo)] [[Paper](https://arxiv.org/pdf/2411.17686)]
+  * Research Output: [[FiCoCo](https://github.com/kawhiiiileo/FiCoCo)]
 
