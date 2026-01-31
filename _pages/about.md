@@ -15,17 +15,12 @@ redirect_from:
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
 - 🧠 *DLLM* — RL-based optimization strategy
 ## 📳 News
-
-* **2025.11.08**: 🎉🎉 Two papers have been accepted to **AAAI 2026**!  
-  - *Compression with Global Guidance: Towards Training-free High-Resolution MLLMs Acceleration*  
-  - *Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration*  
-  Congratulations to all collaborators!
-* **2025.10.02**: 🎉 I have joined the EPIC Lab at Shanghai Jiao Tong University as a research assistant! I will be exploring acceleration strategies for diffusion-based large language models, including **remasking techniques** and **reinforcement-learning-driven optimization methods**. Looking forward to this exciting journey ahead!
-* **2025.09.11**: 🎇🎇 We have released our latest work, [MAGPD](https://arxiv.org/abs/2501.05179), which proposes a multi-agent collaborative framework for instruction optimization! The project [Code](https://github.com/kawhiiiileo/MAPGD) is now available
-
-* **2025.01.10**: 🎇🎇 We release our latest work [GlobalCom<sup>2</sup>](https://arxiv.org/abs/2501.05179), a "global-to-local" approach for training-free acceleration of **high-resolution MLLMs**. [Code](https://github.com/xuyang-liu16/GlobalCom2) is available!
- 
-* **2024.11.17**: 🚀🚀 We release our work [FiCoCo](https://ficoco-accelerate.github.io/) which proposes a **unified paradigm** to demystify the popular works and guide the future designs of training-free token reduction for MLLMs. 
+- **2026.01.29** 🎉 We release Innovator-VL, a large language model tailored for scientific research! [Homepage](innovatorlm.github.io/Innovator-VL/)
+- **2025.11.08** 🎉 Two papers accepted to **AAAI 2026** on training-free acceleration for high-resolution MLLMs! [Global Guidance](https://arxiv.org/abs/2501.05179) | [FiCoCo Extension](https://ficoco-accelerate.github.io/)
+- **2025.10.02** 🔬 Joined EPIC Lab at SJTU as RA, focusing on accelerating diffusion LLMs via remasking & RL-driven optimization.
+- **2025.09.11** 📄 Released [MAGPD](https://arxiv.org/abs/2501.05179): Multi-agent collaborative framework for instruction optimization ([Code](https://github.com/kawhiiiileo/MAPGD)).
+- **2025.01.10** 📄 Released [GlobalCom²](https://arxiv.org/abs/2501.05179): Global-to-local training-free acceleration for high-resolution MLLMs ([Code](https://github.com/xuyang-liu16/GlobalCom2)).
+- **2024.11.17** 📄 Released [FiCoCo](https://ficoco-accelerate.github.io/): Unified paradigm for training-free token reduction in MLLMs.
 
 ## 📝 Publications 
 Please find my full publications on my [Google Scholar](https://scholar.google.com/citations?user=I0V2KAEAAAAJ&hl=en) profile.  <a href="https://scholar.google.com/citations?user=I0V2KAEAAAAJ" target="_blank"> <img src="https://img.shields.io/badge/dynamic/json?label=Paper%20Citations&query=total_citations&url=https%3A%2F%2Fcse.bth.se%2F~fer%2Fgooglescholar-api%2Fgooglescholar.php%3Fuser%3DI0V2KAEAAAAJ&logo=googlescholar&style=social" alt="Google Scholar"></a>
@@ -55,6 +50,7 @@ Please find my full publications on my [Google Scholar](https://scholar.google.c
 ### Preprints & Under Submission
 <a href="https://arxiv.org/pdf/2509.11361" target="_blank"><img src="https://img.shields.io/badge/arXiv-2509.11361-B31B1B?style=flat-square"></a> Yichen Han<sup>\*</sup>, <u>Yuhang Han</u><sup>\*</sup>, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He, Tianyu Shi &quot;**MAPGD: Multi-Agent Prompt Gradient Descent for Collaborative Prompt Optimization**&quot;. *arXiv preprint arXiv:2509.11361*. [[paper](https://arxiv.org/pdf/2509.11361)] [[code](https://github.com/kawhiiiileo/MAPGD)] <a href="https://github.com/kawhiiiileo/MAPGD" target="_blank"><img src="https://img.shields.io/github/stars/kawhiiiileo/MAPGD?style=social"></a>
 
+<a href="https://arxiv.org/pdf/2601.19325" target="_blank"><img src="https://img.shields.io/badge/arXiv-2601.19325-B31B1B?style=flat-square"></a> Zichen Wen<sup>*</sup>, Boxue Yang<sup>*</sup>, Shuang Chen, Yaojie Zhang, <u>Yuhang Han</u>, Junlong Ke, Cong Wang, Yicheng Fu, Jiawang Zhao, Jiangchao Yao, Xi Fang, Zhen Wang, Hengxing Cai, Lin Yao, Zhifeng Gao, Yanhui Hong, Nang Yuan, Yixuan Li, Guojiang Zhao, Haoyu Tao, Nan Wang, Han Lyu, Guolin Ke, Ning Liao, Xiaoxing Wang, Kai Chen, Zhiyu Li, Feiyu Xiong, Sihan Hu, Kun Chen, Yanfeng Wang, Weinan E<sup>†</sup>, Linfeng Zhang<sup>†</sup>, Linfeng Zhang<sup>†</sup> "**Innovator-VL: A Multimodal Large Language Model for Scientific Discovery**". *arXiv preprint arXiv:2601.19325*. [[paper](https://arxiv.org/pdf/2601.19325)] [[code](https://github.com/InnovatorLM/Innovator-VL)] <a href="https://github.com/InnovatorLM/Innovator-VL" target="_blank"><img src="https://img.shields.io/github/stars/InnovatorLM/Innovator-VL?style=social"></a>
 
 ## 💻 Experience
 * Research Assistant — **EPIC Lab, Shanghai Jiao Tong University**, Shanghai  
