@@ -9,7 +9,7 @@ redirect_from:
 > *With my warmest wishes, carried into the endless tomorrows to come.*  
 > *— December 1, 2025*
 
-🎆 🎓 Now I am currently serving as a research assistant at the **EPIC Lab, Shanghai Jiao Tong University**, working under the mentorship of Prof. [Linfeng Zhang](https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN). I am also fortunate to collaborate with Dr. [Siteng Huang](https://kyonhuang.top/) at **DAMO Academy** and Master’s student [Xuyang Liu](https://xuyang-liu16.github.io/) from **Sichuan University (SCU)**.
+🎆 🎓 Now I am currently serving as a research assistant at the **EPIC Lab, Shanghai Jiao Tong University**, working under the mentorship of Prof. [Linfeng Zhang](https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN). I am also fortunate to collaborate with Dr. [Siteng Huang](https://kyonhuang.top/) at **DAMO Academy**.
 
 📌 **Research Interests:**  
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
