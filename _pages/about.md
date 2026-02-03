@@ -9,18 +9,23 @@ redirect_from:
 > *With my warmest wishes, carried into the endless tomorrows to come.*  
 > *— December 1, 2025*
 
-🎆 🎓 Now I am currently serving as a research assistant at the **EPIC Lab, Shanghai Jiao Tong University**, working under the mentorship of Prof. [Linfeng Zhang](https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN). I am also fortunate to collaborate with Dr. [Siteng Huang](https://kyonhuang.top/) at **DAMO Academy**.
+🎆 🎓 I am an **Incoming PhD** student (Fall 2026) in the joint program between **Shanghai Jiao Tong University** (EPIC Lab) and **HKUST (Guangzhou)**, working under the mentorship of Prof. [Linfeng Zhang](https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN). I am also fortunate to collaborate with Dr. [Siteng Huang](https://kyonhuang.top/) at **DAMO Academy**.
 
 📌 **Research Interests:**  
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
-- 🧠 *DLLM* — RL-based optimization strategy
+- 🧠 *DLLM|MLLM* — RL-based optimization strategy
 ## 📳 News
-- **2026.01.29** 🎉 We release Innovator-VL, a large language model tailored for scientific research! [Homepage](innovatorlm.github.io/Innovator-VL/)
-- **2025.11.08** 🎉 Two papers accepted to **AAAI 2026** on training-free acceleration for high-resolution MLLMs!
-- **2025.10.02** 🔬 Joined EPIC Lab at SJTU as RA, focusing on accelerating diffusion LLMs via remasking & RL-driven optimization.
-- **2025.09.11** 📄 Released [MAGPD](https://arxiv.org/abs/2501.05179): Multi-agent collaborative framework for instruction optimization ([Code](https://github.com/kawhiiiileo/MAPGD)).
-- **2025.01.10** 📄 Released [GlobalCom²](https://arxiv.org/abs/2501.05179): Global-to-local training-free acceleration for high-resolution MLLMs ([Code](https://github.com/xuyang-liu16/GlobalCom2)).
-- **2024.11.17** 📄 Released [FiCoCo](https://ficoco-accelerate.github.io/): Unified paradigm for training-free token reduction in MLLMs.
+
+<div class="news-scroll" markdown="1">
+
+- **2026.01** 🎉 We release [**Innovator-VL**](innovatorlm.github.io/Innovator-VL/), a large language model tailored for scientific research!
+- **2025.11** 🎉 Two papers accepted to **AAAI 2026** on training-free acceleration for high-resolution MLLMs!
+- **2025.10** 🔬 Joined **EPIC Lab @ SJTU** as Research Assistant, focusing on accelerating diffusion LLMs via remasking & RL-driven optimization.
+- **2025.09** 📄 Released [**MAGPD**](https://arxiv.org/abs/2501.05179): Multi-agent collaborative framework for instruction optimization ([Code](https://github.com/kawhiiiileo/MAPGD))
+- **2025.01** 📄 Released [**GlobalCom²**](https://arxiv.org/abs/2501.05179): Global-to-local training-free acceleration for high-resolution MLLMs ([Code](https://github.com/xuyang-liu16/GlobalCom2))
+- **2024.11**  📄 Released [**FiCoCo**](https://ficoco-accelerate.github.io/): Unified paradigm for training-free token reduction in MLLMs
+
+</div>
 
 ## 📝 Publications 
 Please find my full publications on my [Google Scholar](https://scholar.google.com/citations?user=I0V2KAEAAAAJ&hl=en) profile.  <a href="https://scholar.google.com/citations?user=I0V2KAEAAAAJ" target="_blank"> <img src="https://img.shields.io/badge/dynamic/json?label=Paper%20Citations&query=total_citations&url=https%3A%2F%2Fcse.bth.se%2F~fer%2Fgooglescholar-api%2Fgooglescholar.php%3Fuser%3DI0V2KAEAAAAJ&logo=googlescholar&style=social" alt="Google Scholar"></a>
