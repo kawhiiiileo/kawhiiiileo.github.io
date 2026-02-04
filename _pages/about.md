@@ -14,9 +14,8 @@ redirect_from:
 📌 **Research Interests:**  
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
 - 🧠 *DLLM|MLLM* — RL-based optimization strategy
-## 📳 News
 
-<div class="news-scroll" markdown="1">
+## 📳 News 
 
 - **2026.01** 🎉 We release [**Innovator-VL**](innovatorlm.github.io/Innovator-VL/), a large language model tailored for scientific research!
 - **2025.11** 🎉 Two papers accepted to **AAAI 2026** on training-free acceleration for high-resolution MLLMs!
@@ -24,8 +23,6 @@ redirect_from:
 - **2025.09** 📄 Released [**MAGPD**](https://arxiv.org/abs/2501.05179): Multi-agent collaborative framework for instruction optimization ([Code](https://github.com/kawhiiiileo/MAPGD))
 - **2025.01** 📄 Released [**GlobalCom²**](https://arxiv.org/abs/2501.05179): Global-to-local training-free acceleration for high-resolution MLLMs ([Code](https://github.com/xuyang-liu16/GlobalCom2))
 - **2024.11**  📄 Released [**FiCoCo**](https://ficoco-accelerate.github.io/): Unified paradigm for training-free token reduction in MLLMs
-
-</div>
 
 ## 📝 Publications 
 Please find my full publications on my [Google Scholar](https://scholar.google.com/citations?user=I0V2KAEAAAAJ&hl=en) profile.  <a href="https://scholar.google.com/citations?user=I0V2KAEAAAAJ" target="_blank"> <img src="https://img.shields.io/badge/dynamic/json?label=Paper%20Citations&query=total_citations&url=https%3A%2F%2Fcse.bth.se%2F~fer%2Fgooglescholar-api%2Fgooglescholar.php%3Fuser%3DI0V2KAEAAAAJ&logo=googlescholar&style=social" alt="Google Scholar"></a>
@@ -116,7 +113,7 @@ Zichen Wen<sup>\*</sup>, Boxue Yang<sup>\*</sup>, Shuang Chen, Yaojie Zhang, <u>
   * Advisor: Prof. **Linfeng Zhang**  
   * Time: October 2025 – Present
   * Topic: *RL-based DLLM*
-  * Research Output: To be announced — stay tuned!
+  * Research Output: [[Innovator-VL](https://github.com/InnovatorLM/Innovator-VL)]
 * Research Assistant — **MiLab, Westlake University**, Hangzhou  
   * Advisors: Dr. **Siteng Huang**, Prof. **Donglin Wang**  
   * Time: Aug. 2024 – Dec. 2025  
