@@ -13,7 +13,7 @@ redirect_from:
 
 📌 **Research Interests:**  
 - ⚡ *Efficient Large Model Inference* — accelerating multimodal LLMs and ViTs  
-- 🧠 *DLLM|MLLM* — RL-based optimization strategy
+- 🧠 *DLLM\|MLLM* — RL-based optimization strategy
 
 ## 📳 News 
 
