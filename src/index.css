@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cyberpunk Dark Palette */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #0d1117;
+  --bg-card: rgba(16, 20, 28, 0.9);
+  --bg-glass: rgba(20, 25, 35, 0.7);
+  
+  /* Neon Colors */
+  --neon-cyan: #00f5ff;
+  --neon-magenta: #ff00ff;
+  --neon-purple: #b829dd;
+  --neon-blue: #0080ff;
+  --neon-green: #00ff88;
+  --neon-orange: #ff6600;
+  --neon-yellow: #ffff00;
+  --neon-pink: #ff2d95;
+  
+  /* Badge Colors */
+  --badge-conf-bg: rgba(0, 245, 255, 0.12);
+  --badge-conf-border: rgba(0, 245, 255, 0.35);
+  --badge-conf-text: #00f5ff;
+  
+  --badge-journal-bg: rgba(0, 255, 136, 0.12);
+  --badge-journal-border: rgba(0, 255, 136, 0.35);
+  --badge-journal-text: #00ff88;
+  
+  --badge-arxiv-bg: rgba(255, 45, 149, 0.12);
+  --badge-arxiv-border: rgba(255, 45, 149, 0.35);
+  --badge-arxiv-text: #ff2d95;
+  
+  /* Text */
+  --text-primary: #e0e6ed;
+  --text-secondary: #8b92a8;
+  --text-muted: #5a6070;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  ::selection {
+    background: rgba(0, 245, 255, 0.3);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  /* Neon text gradients */
+  .text-gradient-cyan {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+  }
+  
+  .text-gradient-magenta {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--neon-magenta), var(--neon-purple));
+  }
+  
+  /* Glow effects */
+  .glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5), 0 0 20px rgba(0, 245, 255, 0.3);
+  }
+  
+  .glow-magenta {
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.3);
+  }
+  
+  .box-glow-cyan {
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.3), 0 0 20px rgba(0, 245, 255, 0.1);
+  }
+  
+  /* Cyberpunk borders */
+  .border-cyber {
+    border: 1px solid rgba(0, 245, 255, 0.2);
+  }
+  
+  .border-cyber-magenta {
+    border: 1px solid rgba(255, 0, 255, 0.2);
+  }
+  
+  /* Unified Badge Styles */
+  .badge-conference {
+    @apply inline-flex items-center px-2.5 py-1 text-[11px] font-bold tracking-wider uppercase;
+    background: var(--badge-conf-bg);
+    color: var(--badge-conf-text);
+    border: 1px solid var(--badge-conf-border);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+    text-shadow: 0 0 8px rgba(0, 245, 255, 0.3);
+  }
+  
+  .badge-journal {
+    @apply inline-flex items-center px-2.5 py-1 text-[11px] font-bold tracking-wider uppercase;
+    background: var(--badge-journal-bg);
+    color: var(--badge-journal-text);
+    border: 1px solid var(--badge-journal-border);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+  }
+  
+  .badge-arxiv {
+    @apply inline-flex items-center px-2.5 py-1 text-[11px] font-bold tracking-wider uppercase;
+    background: var(--badge-arxiv-bg);
+    color: var(--badge-arxiv-text);
+    border: 1px solid var(--badge-arxiv-border);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(255, 45, 149, 0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+    text-shadow: 0 0 8px rgba(255, 45, 149, 0.3);
+  }
+  
+  /* Link styles */
+  .link-cyan {
+    @apply text-cyan-400 hover:text-cyan-300 transition-colors;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 245, 255, 0.3);
+  }
+  
+  .link-cyan:hover {
+    text-decoration-color: var(--neon-cyan);
+  }
+  
+  /* Icon button styles */
+  .icon-btn {
+    @apply inline-flex items-center justify-center w-7 h-7 rounded-md transition-all duration-200;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .icon-btn:hover {
+    background: rgba(0, 245, 255, 0.15);
+    border-color: rgba(0, 245, 255, 0.4);
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.2);
+    transform: translateY(-1px);
+  }
+  
+  /* Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 245, 255, 0.3);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 245, 255, 0.5);
+  }
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Grid background */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
