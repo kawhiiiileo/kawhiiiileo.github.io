@@ -25,7 +25,7 @@ export const profile = {
   googleScholar: "https://scholar.google.com/citations?user=I0V2KAEAAAAJ&hl=en",
   github: "https://github.com/kawhiiiileo",
   quote: "All or nothing.",
-  quoteDate: "",
+  quoteDate: "December 1, 2025",
   
   education: {
     institution: "Shanghai Jiao Tong University & HKUST (Guangzhou)",
