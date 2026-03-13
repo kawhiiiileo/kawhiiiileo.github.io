@@ -31,7 +31,7 @@ export const profile = {
     institution: "Shanghai Jiao Tong University & HKUST (Guangzhou)",
     lab: "EPIC Lab",
     advisor: "Prof. Linfeng Zhang",
-    advisorUrl: "https://scholar.google.com/citations?user=6tWunTgAAAAJ&hl=zh-CN",
+    advisorUrl: "https://www.zhanglinfeng.tech/",
     startDate: "Fall 2026",
   },
   
@@ -195,8 +195,8 @@ export const preprints: Paper[] = [
     authors: "Yuhang Han, Yuyang Wu, Zhengbo Jiao, Yiyu Wang, Shaobo Wang, Hanlin Xu, Xuming Hu, Linfeng Zhang†",
     title: "Bridging Visual Representation and Reinforcement Learning from Verifiable Rewards in Large Vision-Language Models",
     venue: "arXiv preprint arXiv:2603.xxxxx, 2026",
-    paperUrl: "https://arxiv.org/pdf/2603.xxxxx",
-    codeUrl: "https://kawhiiiileo.github.io/KAWHI_PAGE/",
+    // paperUrl: "https://arxiv.org/pdf/2603.xxxxx",
+    pageUrl: "https://kawhiiiileo.github.io/KAWHI_PAGE/",
     // stars: "InnovatorLM/Innovator-VL",
   },
 ];
