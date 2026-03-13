@@ -59,6 +59,16 @@ export const profile = {
 
 // News items - add new items at the top
 export const newsItems = [
+    {
+    date: "2026.03",
+    emoji: "🎉",
+    content: "We released ",
+    link: {
+      text: "KAWHI",
+      url: "https://kawhiiiileo.github.io/KAWHI_PAGE/",
+    },
+    extra: ", a plug-and-play reward reweighting mechanism that explicitly incorporates structured visual information into uniform reward policy optimization methods!",
+  },
   {
     date: "2026.01",
     emoji: "🎉",
@@ -178,6 +188,16 @@ export const preprints: Paper[] = [
     paperUrl: "https://arxiv.org/pdf/2601.19325",
     codeUrl: "https://github.com/InnovatorLM/Innovator-VL",
     stars: "InnovatorLM/Innovator-VL",
+  },
+  {
+    badge: "arXiv 2603.xxxxx",
+    badgeType: "arxiv",
+    authors: "Yuhang Han, Yuyang Wu, Zhengbo Jiao, Yiyu Wang, Shaobo Wang, Hanlin Xu, Xuming Hu, Linfeng Zhang†",
+    title: "Bridging Visual Representation and Reinforcement Learning from Verifiable Rewards in Large Vision-Language Models",
+    venue: "arXiv preprint arXiv:2603.xxxxx, 2026",
+    paperUrl: "https://arxiv.org/pdf/2603.xxxxx",
+    codeUrl: "https://kawhiiiileo.github.io/KAWHI_PAGE/",
+    // stars: "InnovatorLM/Innovator-VL",
   },
 ];
 
