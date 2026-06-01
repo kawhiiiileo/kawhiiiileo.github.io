@@ -1,124 +1,195 @@
-import { FileText, BookOpen, FlaskConical } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { conferencePapers, journalPapers, preprints, profile } from '@/data/profile';
+import type { Paper } from '@/data/profile';
 
-interface Paper {
-  badge: string;
-  badgeType: 'conference' | 'journal' | 'arxiv';
-  authors: string;
-  title: string;
-  venue: string;
-  note?: string;
-  paperUrl?: string;
-  pageUrl?: string;
-  codeUrl?: string;
-  stars?: string;
-}
+export function Publications() {
+  const [viewMode, setViewMode] = useState<'all' | 'selected'>('all');
+  const [citations, setCitations] = useState(profile.citations);
 
-function getBadgeClass(badge: string) {
-  const upper = badge.toUpperCase();
-  if (upper.includes('ICLR')) return 'badge-iclr';
-  if (upper.includes('AAAI')) return 'badge-aaai';
-  if (upper.includes('NEURIPS')) return 'badge-neurips';
-  if (upper.includes('EMNLP')) return 'badge-emnlp';
-  if (upper.includes('CVPR')) return 'badge-cvpr';
-  if (upper.includes('ICML')) return 'badge-icml';
-  if (upper.includes('ARXIV')) return 'badge-arxiv';
-  return 'badge-journal';
-}
+  useEffect(() => {
+    let isMounted = true;
 
-function highlightAuthor(authors: string) {
-  const parts = authors.split(/(Yuhang Han|Y Han|Yuhang Han\*|Y Han\*)/);
-  return parts.map((part, i) => {
-    if (part === 'Yuhang Han' || part === 'Y Han' || part === 'Yuhang Han*' || part === 'Y Han*') {
-      return <span key={i} className="font-semibold text-[var(--text-primary)]">{part}</span>;
-    }
-    return <span key={i} className="text-[var(--text-secondary)]">{part}</span>;
-  });
-}
+    fetch('/gs_data_shieldsio.json', { cache: 'no-store' })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to load citation data: ${response.status}`);
+        }
+        return response.json() as Promise<{ message?: string }>;
+      })
+      .then((data) => {
+        if (isMounted && data.message) {
+          setCitations(data.message);
+        }
+      })
+      .catch(() => {
+        // Keep the static fallback when Google Scholar data is unavailable.
+      });
 
-function PaperItem({ paper }: { paper: Paper }) {
-  const badgeParts = paper.badge.split(' ');
-  const conf = badgeParts[0];
-  const year = badgeParts[1] || '';
-  
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
-    <li className="py-2.5 border-b border-[var(--border-color)] last:border-0 group/item hover:bg-[var(--accent)]/[0.02] -mx-2 px-2 rounded transition-colors">
-      {/* Badges + content - natural wrap */}
-      <div className="text-[13px] leading-relaxed">
-        {/* Badges inline with glow on hover */}
-        <span className={`badge-conf ${getBadgeClass(paper.badge)} mr-1 transition-all group-hover/item:shadow-[0_0_8px_currentColor]`}>{conf}</span>
-        {year && <span className={`badge-conf ${getBadgeClass(paper.badge)} mr-1 transition-all group-hover/item:shadow-[0_0_8px_currentColor]`}>{year}</span>}
-        
-        {/* Content follows badges */}
-        <span>{highlightAuthor(paper.authors)},</span>
-        {' '}
-        <span className="font-semibold text-[var(--text-primary)] group-hover/item:text-[var(--accent)] transition-colors">"{paper.title}"</span>
-        {', '}
-        <span className="italic text-[var(--text-muted)]">{paper.venue}</span>
-        {paper.note && <span className="text-[var(--text-muted)] text-xs"> ({paper.note})</span>}
-        
-        {/* Links with enhanced hover */}
-        <span className="ml-1">
-          {paper.paperUrl && (
-            <a href={paper.paperUrl} target="_blank" rel="noopener noreferrer" 
-               className="text-[var(--accent)] hover:underline font-medium relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-[var(--accent)] after:transition-all hover:after:w-full">[paper]</a>
-          )}
-          {paper.codeUrl && (
-            <a href={paper.codeUrl} target="_blank" rel="noopener noreferrer" 
-               className="text-[var(--accent)] hover:underline font-medium relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-[var(--accent)] after:transition-all hover:after:w-full">[code]</a>
-          )}
-          {paper.pageUrl && (
-            <a href={paper.pageUrl} target="_blank" rel="noopener noreferrer" 
-               className="text-[var(--accent)] hover:underline font-medium relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-[var(--accent)] after:transition-all hover:after:w-full">[page]</a>
-          )}
-          {paper.stars && (
-            <a href={`https://github.com/${paper.stars}`} target="_blank" rel="noopener noreferrer" className="ml-1 align-middle">
-              <img src={`https://img.shields.io/github/stars/${paper.stars}?style=flat-square&color=f59e0b&labelColor=1e293b&logo=github&logoColor=fff`} 
-                   alt="stars" className="h-4 dark:inline hidden" />
-              <img src={`https://img.shields.io/github/stars/${paper.stars}?style=flat-square&color=f59e0b&labelColor=f8fafc&logo=github&logoColor=333`} 
-                   alt="stars" className="h-4 dark:hidden" />
-            </a>
-          )}
-        </span>
+    <>
+      <h2 className="section-heading">📝 Publications</h2>
+
+      <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '10px' }}>
+        Full list on <a href={profile.googleScholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        {' '}· Citations: {citations} · * Equal contribution † Project head · ✉ Corresponding author
+      </p>
+
+      <div className="pub-toggle" role="group" aria-label="Publications view">
+        <button
+          type="button"
+          className={`pub-toggle-btn ${viewMode === 'all' ? 'is-active' : ''}`}
+          onClick={() => setViewMode('all')}
+          aria-pressed={viewMode === 'all'}
+        >
+          Show by All
+        </button>
+        <button
+          type="button"
+          className={`pub-toggle-btn ${viewMode === 'selected' ? 'is-active' : ''}`}
+          onClick={() => setViewMode('selected')}
+          aria-pressed={viewMode === 'selected'}
+        >
+          Show by Topic
+        </button>
       </div>
-    </li>
+
+      <div id="pub-all" className={`pub-panel ${viewMode === 'all' ? '' : 'is-hidden'}`}>
+        <PaperSection title="Peer-reviewed Conference" papers={conferencePapers} />
+        <PaperSection title="Peer-reviewed Journal" papers={journalPapers} />
+        <PaperSection title="Preprints & Under Submission" papers={preprints} />
+      </div>
+
+      <div id="pub-selected" className={`pub-panel ${viewMode === 'selected' ? '' : 'is-hidden'}`}>
+        <TopicSection title="Efficient MLLM Inference" papers={[conferencePapers[0], conferencePapers[1]]} />
+        <TopicSection title="RL for LLMs" papers={[preprints[0]]} />
+        <TopicSection title="Multi-Agent Prompt Optimization" papers={[preprints[2]]} />
+        <TopicSection title="Agentic Systems & Routing" papers={[conferencePapers[3], conferencePapers[4], preprints[5]]} />
+        <TopicSection title="Other Works" papers={[journalPapers[0], conferencePapers[2], preprints[1], preprints[4]]} />
+      </div>
+    </>
   );
 }
 
-function PaperSection({ title, papers, icon: Icon }: { title: string; papers: Paper[]; icon: React.ElementType }) {
+function PaperSection({ title, papers }: { title: string; papers: Paper[] }) {
   if (papers.length === 0) return null;
   return (
-    <div className="mb-5">
-      <h3 className="text-[11px] font-bold text-[var(--text-muted)] uppercase tracking-wide mb-2 flex items-center gap-1.5">
-        <Icon className="w-3.5 h-3.5 text-[var(--accent)]" />
-        {title}
-      </h3>
-      <ul>{papers.map((p, i) => <PaperItem key={i} paper={p} />)}</ul>
+    <div className="pub-section">
+      <h3 className="pub-section-title">{title}</h3>
+      {papers.map((paper, i) => <PaperItem key={i} paper={paper} />)}
     </div>
   );
 }
 
-export function Publications() {
+function TopicSection({ title, papers }: { title: string; papers: Paper[] }) {
+  if (papers.length === 0) return null;
   return (
-    <section id="publications">
-      <h2 className="text-base font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
-        <span className="w-1 h-4 bg-[var(--accent)] rounded-full shadow-[0_0_8px_currentColor]"></span>
-        Publications
-      </h2>
-      
-      <p className="text-[12px] text-[var(--text-secondary)] mb-3">
-        Full list on <a href={profile.googleScholar} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline font-semibold relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-[var(--accent)] after:transition-all hover:after:w-full">Google Scholar</a>
-        {' '}·{}
-        <img src="https://img.shields.io/badge/dynamic/json?label=citations&query=total_citations&url=https%3A%2F%2Fcse.bth.se%2F~fer%2Fgooglescholar-api%2Fgooglescholar.php%3Fuser%3DI0V2KAEAAAAJ&color=3b82f6&labelColor=1e293b&style=flat-square&logo=google-scholar" 
-             alt="citations" className="inline h-4 ml-1 align-text-bottom dark:inline hidden" />
-        <img src="https://img.shields.io/badge/dynamic/json?label=citations&query=total_citations&url=https%3A%2F%2Fcse.bth.se%2F~fer%2Fgooglescholar-api%2Fgooglescholar.php%3Fuser%3DI0V2KAEAAAAJ&color=3b82f6&labelColor=f8fafc&style=flat-square&logo=google-scholar" 
-             alt="citations" className="inline h-4 ml-1 align-text-bottom dark:hidden" />
-        {' '}· * Equal contribution
-      </p>
-      
-      <PaperSection title="Conference Papers" papers={conferencePapers} icon={FileText} />
-      <PaperSection title="Journal Papers" papers={journalPapers} icon={BookOpen} />
-      <PaperSection title="Preprints" papers={preprints} icon={FlaskConical} />
-    </section>
+    <div className="pub-section">
+      <h3 className="pub-section-title">{title}</h3>
+      {papers.map((paper, i) => <PaperItem key={i} paper={paper} />)}
+    </div>
   );
+}
+
+function PaperItem({ paper }: { paper: Paper }) {
+  const badgeColor = getBadgeColor(paper.badge);
+  const badgeUrl = getBadgeImageUrl(paper.badge, badgeColor);
+
+  return (
+    <div className="pub-item">
+      {/* Badge */}
+      <span className="pub-badge">
+        {paper.badgeUrl ? (
+          <a href={paper.badgeUrl} target="_blank" rel="noopener noreferrer">
+            <img src={badgeUrl} alt={paper.badge} />
+          </a>
+        ) : (
+          <img src={badgeUrl} alt={paper.badge} />
+        )}
+      </span>
+
+      {/* Oral note */}
+      {paper.oral && <span style={{ color: 'red', fontSize: '13px', fontWeight: '600' }}>(Oral)</span>}
+
+      {/* Authors */}
+      <span>{highlightAuthor(paper.authors)}, </span>
+
+      {/* Title */}
+      <span style={{ fontWeight: '600' }}>&quot;{paper.title}&quot;</span>
+
+      {/* Venue */}
+      {paper.venue && <span>, <em style={{ color: 'var(--text-muted)' }}>{paper.venue}</em></span>}
+
+      {/* Note */}
+      {paper.note && <span style={{ color: 'var(--text-muted)', fontSize: '12px' }}> ({paper.note})</span>}
+
+      {/* Links */}
+      {paper.links && paper.links.length > 0 && (
+        <span className="pub-links">
+          {paper.links.map((link, i) => (
+            <a key={i} href={link.url} target="_blank" rel="noopener noreferrer">
+              [{link.label}]
+            </a>
+          ))}
+        </span>
+      )}
+
+      {/* GitHub Stars */}
+      {paper.stars && (
+        <a href={`https://github.com/${paper.stars}`} target="_blank" rel="noopener noreferrer" className="pub-stars">
+          <img src={`https://img.shields.io/github/stars/${paper.stars}?style=social&label=Stars`} alt="stars" />
+        </a>
+      )}
+    </div>
+  );
+}
+
+// Get badge color based on conference/journal/arxiv
+function getBadgeColor(badge: string): string {
+  const upper = badge.toUpperCase();
+  if (upper.includes('AAAI') || upper.includes('ACM CAISW') || upper.includes('ACM CAIW')) return '007ec6';
+  if (upper.includes('CVPR')) return 'blue';
+  if (upper.includes('ICCV') || upper.includes('ECCV')) return 'blue';
+  if (upper.includes('NEURIPS')) return 'blue';
+  if (upper.includes('ICLR')) return 'blue';
+  if (upper.includes('ICML')) return 'blue';
+  if (upper.includes('ICRA')) return 'blue';
+  if (upper.includes('CORL')) return 'blue';
+  if (upper.includes('ACMMM') || upper.includes('MM')) return 'blue';
+  if (upper.includes('ARXIV')) return 'B31B1B';
+  if (upper.includes('RS') || upper.includes('TCSVT') || upper.includes('RAL') || upper.includes('TIP') || upper.includes('TNNLS')) return '49846a';
+  return 'blue';
+}
+
+function getBadgeImageUrl(badge: string, color: string): string {
+  const upper = badge.toUpperCase();
+
+  if (upper.startsWith('AAAI-')) {
+    const year = badge.split('-').slice(1).join('-');
+    return `https://img.shields.io/badge/AAAI-${encodeURIComponent(year)}-${color}?style=flat-square&labelColor=555555`;
+  }
+
+  if (upper.startsWith('ACM CAISW ') || upper.startsWith('ACM CAIW ')) {
+    const parts = badge.split(' ');
+    const year = parts.pop() || '';
+    const label = parts.join(' ');
+    return `https://img.shields.io/badge/${encodeURIComponent(label)}-${encodeURIComponent(year)}-${color}?style=flat-square&labelColor=555555`;
+  }
+
+  return `https://img.shields.io/badge/${encodeURIComponent(badge)}-${color}?style=flat-square`;
+}
+
+// Highlight the author's name
+function highlightAuthor(authors: string): React.ReactNode {
+  const parts = authors.split(/(Yuhang Han(?:[*†✉]*)?|Y Han(?:[*†✉]*)?)/);
+  return parts.map((part, i) => {
+    if (/^(Yuhang Han|Y Han)(?:[*†✉]*)?$/.test(part)) {
+      return <u key={i} className="author-highlight">{part}</u>;
+    }
+    return <span key={i}>{part}</span>;
+  });
 }
