@@ -48,7 +48,7 @@ export const profile = {
   bio: "Incoming PhD Student at SJTU & HKUST (GZ), EPIC Lab. Researching on efficient multimodal LLM inference.",
   email: "kawhiiileo2@gmail.com",
   googleScholar: "https://scholar.google.com/citations?user=I0V2KAEAAAAJ&hl=zh-CN",
-  citations: "--",
+  citations: "208",
   github: "https://github.com/kawhiiiileo",
   location: "Shanghai, China",
   avatar: "/avatar.png",
@@ -151,7 +151,7 @@ export const conferencePapers: Paper[] = [
   {
     badge: "AAAI-2026",
     badgeUrl: "https://ojs.aaai.org/index.php/AAAI/article/view/33131",
-    authors: "Xuyang Liu, Ziming Wang, Yuhang Han, Yingyao Wang, Jiale Yuan, Jun Song, Bo Zheng, Linfeng Zhang, Siteng Huang, Honggang Chen",
+    authors: "Xuyang Liu, Ziming Wang, Yuhang Han, Yingyao Wang, Jiale Yuan, Jun Song, Bo Zheng, Linfeng Zhang, Siteng Huang, Honggang Chen✉",
     title: "Compression with Global Guidance: Towards Training-free High-Resolution MLLMs Acceleration",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence",
     note: "CCF A",
@@ -164,7 +164,7 @@ export const conferencePapers: Paper[] = [
   {
     badge: "AAAI-2026",
     badgeUrl: "https://ojs.aaai.org/index.php/AAAI/article/view/33131",
-    authors: "Yuhang Han*†, Xuyang Liu*, Pengxiang Ding, Donglin Wang, Honggang Chen, Qingsen Yan, Siteng Huang",
+    authors: "Yuhang Han*†, Xuyang Liu*, Pengxiang Ding, Donglin Wang, Honggang Chen, Qingsen Yan, Siteng Huang✉",
     title: "Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence",
     note: "CCF A",
@@ -177,7 +177,7 @@ export const conferencePapers: Paper[] = [
   },
   {
     badge: "ICIC-2024",
-    authors: "Junhong Li, Renxiang Guan, Yuhang Han, Yaowen Hu, Zihao Li, Yanyan Wu, Ziwei Xu, Xianju Li",
+    authors: "Junhong Li, Renxiang Guan, Yuhang Han, Yaowen Hu, Zihao Li, Yanyan Wu, Ziwei Xu, Xianju Li✉",
     title: "Superpixel-based Dual-neighborhood Contrastive Graph Autoencoder for Deep Subspace Clustering of Hyperspectral Image",
     venue: "International Conference on Intelligent Computing",
     note: "CCF C",
@@ -191,7 +191,7 @@ export const conferencePapers: Paper[] = [
   },
   {
     badge: "ACM CAISW 2026",
-    authors: "Yuhang Yao, Zeyu Wang, Tongyun Yang, Wanyi Chen, Yuhang Han, Jie Xiao, Chengke Bao, Tianyu Shi",
+    authors: "Yuhang Yao, Zeyu Wang, Tongyun Yang, Wanyi Chen, Yuhang Han, Jie Xiao, Chengke Bao, Tianyu Shi✉",
     title: "MERA: Model Evolution and Routing with Skill Adaptation for Agentic Systems at Scale",
     venue: "ACM CAISW 2026",
     note: "Workshop Poster",
@@ -202,7 +202,7 @@ export const conferencePapers: Paper[] = [
 export const journalPapers: Paper[] = [
   {
     badge: "RS-2024",
-    authors: "Y Han, B Duan, R Guan, G Yang, Z Zhen",
+    authors: "Y Han, B Duan, R Guan, G Yang, Z Zhen✉",
     title: "LUFFD-YOLO: A Lightweight Model for UAV Remote Sensing Forest Fire Detection Based on Attention Mechanism and Multi-Level Feature Fusion",
     venue: "Remote Sensing",
     note: "CAAI B & Q1",
@@ -216,7 +216,7 @@ export const journalPapers: Paper[] = [
 export const preprints: Paper[] = [
   {
     badge: "arXiv-2603.27375",
-    authors: "Yuhang Han†, Yuyang Wu, Zhengbo Jiao, Yiyu Wang, Xuyang Liu, Shaobo Wang, Hanlin Xu, Xuming Hu, Linfeng Zhang",
+    authors: "Yuhang Han†, Yuyang Wu, Zhengbo Jiao, Yiyu Wang, Xuyang Liu, Shaobo Wang, Hanlin Xu, Xuming Hu, Linfeng Zhang✉",
     title: "Bridging Visual Representation and Reinforcement Learning from Verifiable Rewards in Large Vision-Language Models",
     venue: "arXiv preprint arXiv:2603.27375",
     note: "Under review (ECCV 2026)",
@@ -227,7 +227,7 @@ export const preprints: Paper[] = [
   },
   {
     badge: "arXiv-2601.19325",
-    authors: "Zichen Wen†, Boxue Yang†, Shuang Chen, Yaojie Zhang, Yuhang Han, Junlong Ke, Cong Wang, Yicheng Fu, Jiawang Zhao, Jiangchao Yao, Xi Fang, Zhen Wang, Hengxing Cai, Lin Yao, Zhifeng Gao, Yanhui Hong, Nang Yuan, Yixuan Li, Guojiang Zhao, Haoyu Tao, Nan Wang, Han Lyu, Guolin Ke, Ning Liao, Xiaoxing Wang, Kai Chen, Zhiyu Li, Feiyu Xiong, Sihan Hu, Kun Chen, Yanfeng Wang, Weinan E†, Linfeng Zhang†",
+    authors: "Zichen Wen*†, Boxue Yang*†, Shuang Chen, Yaojie Zhang, Yuhang Han, Junlong Ke, Cong Wang, Yicheng Fu, Jiawang Zhao, Jiangchao Yao, Xi Fang, Zhen Wang, Hengxing Cai, Lin Yao, Zhifeng Gao, Yanhui Hong, Nang Yuan, Yixuan Li, Guojiang Zhao, Haoyu Tao, Nan Wang, Han Lyu, Guolin Ke, Ning Liao, Xiaoxing Wang, Kai Chen, Zhiyu Li, Feiyu Xiong, Sihan Hu, Kun Chen, Yanfeng Wang, Weinan E†, Linfeng Zhang†✉",
     title: "Innovator-VL: A Multimodal Large Language Model for Scientific Discovery",
     venue: "arXiv preprint arXiv:2601.19325",
     links: [
@@ -238,7 +238,7 @@ export const preprints: Paper[] = [
   },
   {
     badge: "arXiv-2509.11361",
-    authors: "Yichen Han*, Yuhang Han*†, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He, Tianyu Shi",
+    authors: "Yichen Han*, Yuhang Han*†, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He, Tianyu Shi✉",
     title: "MAPGD: Multi-Agent Prompt Gradient Descent for Collaborative Prompt Optimization",
     venue: "arXiv preprint arXiv:2509.11361",
     links: [
@@ -249,7 +249,7 @@ export const preprints: Paper[] = [
   },
   {
     badge: "arXiv-xxxx",
-    authors: "Yuhang Han*†, Wenzheng Yang*, Yujie Chen, Xiangqi Jin, Yaojie Zhang, Siteng Huang, Linfeng Zhang",
+    authors: "Yuhang Han*†, Wenzheng Yang*, Yujie Chen, Xiangqi Jin, Yaojie Zhang, Siteng Huang, Linfeng Zhang✉",
     title: "STaR-KV: Spatio-Temporal Adaptive Re-weighting for KV Cache Compression in GUI Vision-Language Models",
     venue: "arXiv preprint arXiv:xxxx",
     note: "Under review (ACL ARR 2026)",
@@ -260,7 +260,7 @@ export const preprints: Paper[] = [
   },
   {
     badge: "arXiv-2605.20022",
-    authors: "Y Zhang, J Huang, Junlong Ke, Yuhang Han, Y Long, T Zhao, B Qi, Linfeng Zhang",
+    authors: "Y Zhang, J Huang, Junlong Ke, Yuhang Han, Y Long, T Zhao, B Qi, Linfeng Zhang✉",
     title: "FlexDraft: Flexible Speculative Decoding via Attention Tuning and Bonus-Guided Calibration",
     venue: "arXiv preprint arXiv:2605.20022",
     note: "Under review (NeurIPS 2026)",
