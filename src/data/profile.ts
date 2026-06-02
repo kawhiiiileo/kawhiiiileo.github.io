@@ -107,7 +107,7 @@ export const introText = `👋 Hi! I am Yuhang Han (韩宇航 in Chinese). I am 
 export const recentNews: NewsItem[] = [
   {
     date: "2026/06",
-    content: `[Preprint] We released STaR-KV, a training-free method for KV cache compression in GUI agents!`,
+    content: `[Preprint] We released [STaR-KV](https://arxiv.org/abs/2606.01790), a training-free method for KV cache compression in GUI agents!`,
   },
   {
     date: "2026/05",
@@ -248,12 +248,13 @@ export const preprints: Paper[] = [
     stars: "kawhiiiileo/MAPGD",
   },
   {
-    badge: "arXiv-xxxx",
+    badge: "arXiv-2606.01790",
     authors: "Yuhang Han*†, Wenzheng Yang*, Yujie Chen, Xiangqi Jin, Yaojie Zhang, Siteng Huang, Linfeng Zhang✉",
     title: "STaR-KV: Spatio-Temporal Adaptive Re-weighting for KV Cache Compression in GUI Vision-Language Models",
-    venue: "arXiv preprint arXiv:xxxx",
+    venue: "arXiv preprint arXiv:2606.01790",
     note: "Under review (ACL ARR 2026)",
     links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2606.01790" },
       { label: "github", url: "https://github.com/kawhiiiileo/STaR-KV" },
     ],
     stars: "kawhiiiileo/STaR-KV",
