@@ -65,7 +65,7 @@ export function Publications() {
       </div>
 
       <div id="pub-selected" className={`pub-panel ${viewMode === 'selected' ? '' : 'is-hidden'}`}>
-        <TopicSection title="Efficient MLLM Inference" papers={[conferencePapers[0], conferencePapers[1]]} />
+        <TopicSection title="Efficient MLLM Inference" papers={[conferencePapers[0], conferencePapers[1], preprints[3]]} />
         <TopicSection title="RL for LLMs" papers={[preprints[0]]} />
         <TopicSection title="Multi-Agent Prompt Optimization" papers={[preprints[2]]} />
         <TopicSection title="Agentic Systems & Routing" papers={[conferencePapers[3], conferencePapers[4], preprints[5]]} />

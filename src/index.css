@@ -174,8 +174,11 @@ button {
 .author__avatar img {
   display: block;
   width: 90px;
+  height: 90px;
   min-width: 90px;
   max-width: 175px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 50%;
 }
 
@@ -520,8 +523,11 @@ button {
 
   .author__avatar img {
     width: 100%;
+    aspect-ratio: 1 / 1;
     height: auto;
     min-width: 75px;
+    object-fit: cover;
+    object-position: center;
     padding: 5px;
     border: 1px solid var(--border-color);
   }
