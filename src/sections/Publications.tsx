@@ -65,11 +65,11 @@ export function Publications() {
       </div>
 
       <div id="pub-selected" className={`pub-panel ${viewMode === 'selected' ? '' : 'is-hidden'}`}>
-        <TopicSection title="Efficient MLLM Inference" papers={[conferencePapers[0], conferencePapers[1], preprints[3]]} />
-        <TopicSection title="RL for LLMs" papers={[preprints[0]]} />
-        <TopicSection title="Multi-Agent Prompt Optimization" papers={[preprints[2]]} />
-        <TopicSection title="Agentic Systems & Routing" papers={[conferencePapers[3], conferencePapers[4], preprints[5]]} />
-        <TopicSection title="Other Works" papers={[journalPapers[0], conferencePapers[2], preprints[1], preprints[4]]} />
+        <TopicSection title="Efficient MLLM Inference" papers={[conferencePapers[1], conferencePapers[2], preprints[2]]} />
+        <TopicSection title="RL for LLMs" papers={[conferencePapers[0]]} />
+        <TopicSection title="Multi-Agent Prompt Optimization" papers={[preprints[1]]} />
+        <TopicSection title="Agentic Systems & Routing" papers={[conferencePapers[4], conferencePapers[5], preprints[4]]} />
+        <TopicSection title="Other Works" papers={[journalPapers[0], conferencePapers[3], preprints[0], preprints[3]]} />
       </div>
     </>
   );

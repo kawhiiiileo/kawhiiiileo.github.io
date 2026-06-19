@@ -107,6 +107,10 @@ export const introText = `👋 Hi! I am Yuhang Han (韩宇航 in Chinese). I am 
 export const recentNews: NewsItem[] = [
   {
     date: "2026/06",
+    content: `[ECCV'26] [KAWHI](https://kawhiiiileo.github.io/KAWHI_PAGE/) got accepted to ECCV 2026!`,
+  },
+  {
+    date: "2026/06",
     content: `[Preprint] We released [STaR-KV](https://arxiv.org/abs/2606.01790), a training-free method for KV cache compression in GUI agents!`,
   },
   {
@@ -148,6 +152,16 @@ export const olderNews: NewsItem[] = [
 
 // Publications - Conference Papers
 export const conferencePapers: Paper[] = [
+  {
+    badge: "ECCV-2026",
+    authors: "Yuhang Han†, Yuyang Wu, Zhengbo Jiao, Yiyu Wang, Xuyang Liu, Shaobo Wang, Hanlin Xu, Xuming Hu, Linfeng Zhang✉",
+    title: "Bridging Visual Representation and Reinforcement Learning from Verifiable Rewards in Large Vision-Language Models",
+    venue: "European Conference on Computer Vision (ECCV)",
+    note: "CCF B",
+    links: [
+      { label: "project page", url: "https://kawhiiiileo.github.io/KAWHI_PAGE/" },
+    ],
+  },
   {
     badge: "AAAI-2026",
     badgeUrl: "https://ojs.aaai.org/index.php/AAAI/article/view/33131",
@@ -214,17 +228,6 @@ export const journalPapers: Paper[] = [
 
 // Publications - Preprints
 export const preprints: Paper[] = [
-  {
-    badge: "arXiv-2603.27375",
-    authors: "Yuhang Han†, Yuyang Wu, Zhengbo Jiao, Yiyu Wang, Xuyang Liu, Shaobo Wang, Hanlin Xu, Xuming Hu, Linfeng Zhang✉",
-    title: "Bridging Visual Representation and Reinforcement Learning from Verifiable Rewards in Large Vision-Language Models",
-    venue: "arXiv preprint arXiv:2603.27375",
-    note: "Under review (ECCV 2026)",
-    links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2603.27375" },
-      { label: "project page", url: "https://kawhiiiileo.github.io/KAWHI_PAGE/" },
-    ],
-  },
   {
     badge: "arXiv-2601.19325",
     authors: "Zichen Wen*†, Boxue Yang*†, Shuang Chen, Yaojie Zhang, Yuhang Han, Junlong Ke, Cong Wang, Yicheng Fu, Jiawang Zhao, Jiangchao Yao, Xi Fang, Zhen Wang, Hengxing Cai, Lin Yao, Zhifeng Gao, Yanhui Hong, Nang Yuan, Yixuan Li, Guojiang Zhao, Haoyu Tao, Nan Wang, Han Lyu, Guolin Ke, Ning Liao, Xiaoxing Wang, Kai Chen, Zhiyu Li, Feiyu Xiong, Sihan Hu, Kun Chen, Yanfeng Wang, Weinan E†, Linfeng Zhang†✉",
