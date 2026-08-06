@@ -7,9 +7,10 @@ export interface Paper {
   badge: string;
   badgeUrl?: string;
   badgeStyle?: string;
-  authors: string;
+  authors?: string;
   title: string;
   venue: string;
+  contribution?: string;
   note?: string;
   oral?: boolean;
   links?: { label: string; url: string }[];
@@ -123,7 +124,7 @@ export const recentNews: NewsItem[] = [
   },
   {
     date: "2026/01",
-    content: `[Preprint] We released [Innovator-VL](https://innovatorlm.github.io/Innovator-VL/), a multimodal large language model tailored for scientific discovery! See [Project page](https://innovatorlm.github.io/Innovator-VL/) for more details!`,
+    content: `[Technical Report] We released [Innovator-VL](https://innovatorlm.github.io/Innovator-VL/), a multimodal large language model tailored for scientific discovery! See [Project page](https://innovatorlm.github.io/Innovator-VL/) for more details!`,
   },
   {
     date: "2025/11",
@@ -226,19 +227,23 @@ export const journalPapers: Paper[] = [
   },
 ];
 
-// Publications - Preprints
-export const preprints: Paper[] = [
+// Technical Reports
+export const technicalReports: Paper[] = [
   {
     badge: "arXiv-2601.19325",
-    authors: "Zichen Wen*†, Boxue Yang*†, Shuang Chen, Yaojie Zhang, Yuhang Han, Junlong Ke, Cong Wang, Yicheng Fu, Jiawang Zhao, Jiangchao Yao, Xi Fang, Zhen Wang, Hengxing Cai, Lin Yao, Zhifeng Gao, Yanhui Hong, Nang Yuan, Yixuan Li, Guojiang Zhao, Haoyu Tao, Nan Wang, Han Lyu, Guolin Ke, Ning Liao, Xiaoxing Wang, Kai Chen, Zhiyu Li, Feiyu Xiong, Sihan Hu, Kun Chen, Yanfeng Wang, Weinan E†, Linfeng Zhang†✉",
     title: "Innovator-VL: A Multimodal Large Language Model for Scientific Discovery",
-    venue: "arXiv preprint arXiv:2601.19325",
+    venue: "Technical report, arXiv:2601.19325",
+    contribution: "Contributed scientific training data for SFT and RL",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2601.19325" },
       { label: "github", url: "https://github.com/InnovatorLM/Innovator-VL" },
     ],
     stars: "InnovatorLM/Innovator-VL",
   },
+];
+
+// Publications - Preprints
+export const preprints: Paper[] = [
   {
     badge: "arXiv-2509.11361",
     authors: "Yichen Han*, Yuhang Han*†, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He, Tianyu Shi✉",

@@ -1,5 +1,5 @@
 import { News } from './News';
-import { Publications } from './Publications';
+import { Publications, TechnicalReports } from './Publications';
 import { Experience } from './Experience';
 import { Services } from './Services';
 import { Misc } from './Misc';
@@ -22,6 +22,11 @@ export function MainContent() {
       <span className="anchor" id="publications"></span>
       <section>
         <Publications />
+      </section>
+
+      <span className="anchor" id="technical-reports"></span>
+      <section>
+        <TechnicalReports />
       </section>
 
       <span className="anchor" id="experience"></span>

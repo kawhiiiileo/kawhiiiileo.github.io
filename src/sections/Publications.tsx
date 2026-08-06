@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { conferencePapers, journalPapers, preprints, profile } from '@/data/profile';
+import { conferencePapers, journalPapers, preprints, profile, technicalReports } from '@/data/profile';
 import type { Paper } from '@/data/profile';
 
 export function Publications() {
@@ -65,11 +65,22 @@ export function Publications() {
       </div>
 
       <div id="pub-selected" className={`pub-panel ${viewMode === 'selected' ? '' : 'is-hidden'}`}>
-        <TopicSection title="Efficient MLLM Inference" papers={[conferencePapers[1], conferencePapers[2], preprints[2]]} />
+        <TopicSection title="Efficient MLLM Inference" papers={[conferencePapers[1], conferencePapers[2], preprints[1]]} />
         <TopicSection title="RL for LLMs" papers={[conferencePapers[0]]} />
-        <TopicSection title="Multi-Agent Prompt Optimization" papers={[preprints[1]]} />
-        <TopicSection title="Agentic Systems & Routing" papers={[conferencePapers[4], conferencePapers[5], preprints[4]]} />
-        <TopicSection title="Other Works" papers={[journalPapers[0], conferencePapers[3], preprints[0], preprints[3]]} />
+        <TopicSection title="Multi-Agent Prompt Optimization" papers={[preprints[0]]} />
+        <TopicSection title="Agentic Systems & Routing" papers={[conferencePapers[4], conferencePapers[5], preprints[3]]} />
+        <TopicSection title="Other Works" papers={[journalPapers[0], conferencePapers[3], preprints[2]]} />
+      </div>
+    </>
+  );
+}
+
+export function TechnicalReports() {
+  return (
+    <>
+      <h2 className="section-heading">Technical Reports</h2>
+      <div className="pub-section">
+        {technicalReports.map((report) => <PaperItem key={report.title} paper={report} />)}
       </div>
     </>
   );
@@ -116,10 +127,13 @@ function PaperItem({ paper }: { paper: Paper }) {
       {paper.oral && <span style={{ color: 'red', fontSize: '13px', fontWeight: '600' }}>(Oral)</span>}
 
       {/* Authors */}
-      <span>{highlightAuthor(paper.authors)}, </span>
+      {paper.authors && <span>{highlightAuthor(paper.authors)}, </span>}
 
       {/* Title */}
       <span style={{ fontWeight: '600' }}>&quot;{paper.title}&quot;</span>
+
+      {/* Contribution */}
+      {paper.contribution && <span className="pub-contribution"> ({paper.contribution})</span>}
 
       {/* Venue */}
       {paper.venue && <span>, <em style={{ color: 'var(--text-muted)' }}>{paper.venue}</em></span>}

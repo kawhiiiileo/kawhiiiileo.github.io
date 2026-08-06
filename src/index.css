@@ -623,6 +623,12 @@ button {
   text-decoration-thickness: 2px;
 }
 
+.pub-contribution {
+  color: var(--text-muted);
+  font-size: 0.92em;
+  font-style: italic;
+}
+
 .service-list {
   margin: 0;
   padding-left: 1.4em;
