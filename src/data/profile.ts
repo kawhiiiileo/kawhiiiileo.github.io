@@ -47,7 +47,7 @@ export const profile = {
   name: "Yuhang Han",
   nameCN: "韩宇航",
   title: "Incoming PhD Student",
-  bio: "Incoming PhD Student at SJTU & HKUST (GZ), EPIC Lab. Researching on efficient multimodal LLM inference.",
+  bio: "Incoming PhD Student at SJTU & HKUST (GZ), EPIC Lab. Working on reinforcement learning, on-policy distillation, coding agents, and AI memory.",
   email: "kawhiiileo2@gmail.com",
   googleScholar: "https://scholar.google.com/citations?user=I0V2KAEAAAAJ&hl=zh-CN",
   citations: "208",
@@ -72,8 +72,9 @@ export const profile = {
   ],
 
   researchInterests: [
-    "Efficient Large Model Inference (Accelerating multimodal LLMs and ViTs)",
-    "DLLM or MLLM (RL-based optimization strategy)",
+    "Reinforcement Learning & On-Policy Distillation (OPD)",
+    "Coding Agents & AI Memory Systems",
+    "Efficient Multimodal Large Model Inference",
   ],
 };
 
@@ -103,7 +104,7 @@ export const educationItems: EducationItem[] = [
 // Intro paragraph
 export const introText = `👋 Hi! I am Yuhang Han (韩宇航 in Chinese). I am an Incoming PhD student (Fall 2026) in the joint program between SJTU (EPIC Lab) and HKUST (GZ), working under Prof. Linfeng Zhang. I also collaborate closely with Dr. Siteng Huang at DAMO Academy, Alibaba Group.
 
-🔬 My research has centered on **efficient inference for multimodal large language models (MLLMs)**, including training-free token reduction, global-to-local compression, and RL-based optimization for diffusion/vision-language models. Recently, I am also exploring **reinforcement learning from verifiable rewards (RLVR)** for large vision-language models.`;
+🔬 My research focuses on **reinforcement learning (RL)** and **on-policy distillation (OPD)** for large language and multimodal models. I am also exploring **coding agents** and **AI memory systems**, while continuing to work on efficient MLLM inference, including training-free token reduction, global-to-local compression, and KV-cache optimization.`;
 
 // News items - format matching reference project
 export const recentNews: NewsItem[] = [
