@@ -1,5 +1,5 @@
 import { News } from './News';
-import { Publications, TechnicalReports } from './Publications';
+import { Publications } from './Publications';
 import { Experience } from './Experience';
 import { Services } from './Services';
 import { Misc } from './Misc';
@@ -9,9 +9,9 @@ export function MainContent() {
   return (
     <main className="page__content">
       <span className="anchor" id="about-me"></span>
-      <section>
-        <h1 className="section-heading">👋 About Me</h1>
-        <div dangerouslySetInnerHTML={{ __html: formatIntro(introText) }} />
+      <section className="about-section">
+        <h2 className="section-heading">About Me</h2>
+        <div className="about-copy" dangerouslySetInnerHTML={{ __html: formatIntro(introText) }} />
       </section>
 
       <span className="anchor" id="news"></span>
@@ -22,11 +22,6 @@ export function MainContent() {
       <span className="anchor" id="publications"></span>
       <section>
         <Publications />
-      </section>
-
-      <span className="anchor" id="technical-reports"></span>
-      <section>
-        <TechnicalReports />
       </section>
 
       <span className="anchor" id="experience"></span>

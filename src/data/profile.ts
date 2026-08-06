@@ -13,6 +13,7 @@ export interface Paper {
   contribution?: string;
   note?: string;
   oral?: boolean;
+  citations?: number;
   links?: { label: string; url: string }[];
   stars?: string;
 }
@@ -174,6 +175,7 @@ export const conferencePapers: Paper[] = [
       { label: "arXiv", url: "https://arxiv.org/abs/2501.05179" },
       { label: "github", url: "https://github.com/xuyang-liu16/GlobalCom2" },
     ],
+    citations: 53,
     stars: "xuyang-liu16/GlobalCom2",
   },
   {
@@ -188,6 +190,7 @@ export const conferencePapers: Paper[] = [
       { label: "project page", url: "https://ficoco-accelerate.github.io/" },
       { label: "github", url: "https://github.com/kawhiiiileo/FiCoCo" },
     ],
+    citations: 55,
     stars: "kawhiiiileo/FiCoCo",
   },
   {
@@ -224,16 +227,27 @@ export const journalPapers: Paper[] = [
     links: [
       { label: "paper", url: "https://www.mdpi.com/2072-4292/16/12/2177" },
     ],
+    citations: 57,
   },
 ];
 
 // Technical Reports
 export const technicalReports: Paper[] = [
   {
-    badge: "arXiv-2601.19325",
+    badge: "Technical Report",
+    title: "Holographic Memory System (HMS)",
+    venue: "Technical report",
+    contribution: "Contributed to memory system design (first author)",
+    links: [
+      { label: "github", url: "https://github.com/Shadow-Weave/HMS" },
+    ],
+    stars: "Shadow-Weave/HMS",
+  },
+  {
+    badge: "Technical Report",
     title: "Innovator-VL: A Multimodal Large Language Model for Scientific Discovery",
     venue: "Technical report, arXiv:2601.19325",
-    contribution: "Contributed scientific training data for SFT and RL",
+    contribution: "Contributed to scientific training data for SFT and RL",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2601.19325" },
       { label: "github", url: "https://github.com/InnovatorLM/Innovator-VL" },

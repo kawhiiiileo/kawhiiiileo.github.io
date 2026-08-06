@@ -3,7 +3,7 @@ import { conferenceServices, journalServices } from '@/data/profile';
 export function Services() {
   return (
     <>
-      <h2 className="section-heading">💼 Services</h2>
+      <h2 className="section-heading">Services</h2>
 
       {conferenceServices.length > 0 && (
         <div style={{ marginBottom: '15px' }}>

@@ -6,7 +6,7 @@ export function News() {
 
   return (
     <>
-      <h2 className="section-heading">📢 News</h2>
+      <h2 className="section-heading">News</h2>
       <ul style={{ listStyle: 'disc', paddingLeft: '20px' }}>
         {recentNews.map((item, index) => (
           <li key={index} className="pub-item">

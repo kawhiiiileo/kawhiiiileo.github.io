@@ -1,42 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { conferencePapers, journalPapers, preprints, profile, technicalReports } from '@/data/profile';
+import { useScholarCitations } from '@/hooks/use-scholar-citations';
 import type { Paper } from '@/data/profile';
 
 export function Publications() {
   const [viewMode, setViewMode] = useState<'all' | 'selected'>('all');
-  const [citations, setCitations] = useState(profile.citations);
-
-  useEffect(() => {
-    let isMounted = true;
-
-    fetch('/gs_data_shieldsio.json', { cache: 'no-store' })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Failed to load citation data: ${response.status}`);
-        }
-        return response.json() as Promise<{ message?: string }>;
-      })
-      .then((data) => {
-        if (isMounted && data.message) {
-          setCitations(data.message);
-        }
-      })
-      .catch(() => {
-        // Keep the static fallback when Google Scholar data is unavailable.
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+  const { citations, updatedAt } = useScholarCitations();
 
   return (
     <>
-      <h2 className="section-heading">📝 Publications</h2>
+      <h2 className="section-heading">Publications</h2>
 
       <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '10px' }}>
         Full list on <a href={profile.googleScholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        {' '}· Citations: {citations} · * Equal contribution † Project head · ✉ Corresponding author
+        {' '}· Citations: <a href={profile.googleScholar} target="_blank" rel="noopener noreferrer" title={updatedAt ? `Updated from Google Scholar: ${updatedAt}` : 'Google Scholar citations'}>{citations}</a> · * Equal contribution † Project head · ✉ Corresponding author
       </p>
 
       <div className="pub-toggle" role="group" aria-label="Publications view">
@@ -61,6 +38,7 @@ export function Publications() {
       <div id="pub-all" className={`pub-panel ${viewMode === 'all' ? '' : 'is-hidden'}`}>
         <PaperSection title="Peer-reviewed Conference" papers={conferencePapers} />
         <PaperSection title="Peer-reviewed Journal" papers={journalPapers} />
+        <PaperSection title="Technical Reports" papers={technicalReports} />
         <PaperSection title="Preprints & Under Submission" papers={preprints} />
       </div>
 
@@ -69,18 +47,7 @@ export function Publications() {
         <TopicSection title="RL for LLMs" papers={[conferencePapers[0]]} />
         <TopicSection title="Multi-Agent Prompt Optimization" papers={[preprints[0]]} />
         <TopicSection title="Agentic Systems & Routing" papers={[conferencePapers[4], conferencePapers[5], preprints[3]]} />
-        <TopicSection title="Other Works" papers={[journalPapers[0], conferencePapers[3], preprints[2]]} />
-      </div>
-    </>
-  );
-}
-
-export function TechnicalReports() {
-  return (
-    <>
-      <h2 className="section-heading">Technical Reports</h2>
-      <div className="pub-section">
-        {technicalReports.map((report) => <PaperItem key={report.title} paper={report} />)}
+        <TopicSection title="Other Works" papers={[journalPapers[0], conferencePapers[3], ...technicalReports, preprints[2]]} />
       </div>
     </>
   );
@@ -133,7 +100,7 @@ function PaperItem({ paper }: { paper: Paper }) {
       <span style={{ fontWeight: '600' }}>&quot;{paper.title}&quot;</span>
 
       {/* Contribution */}
-      {paper.contribution && <span className="pub-contribution"> ({paper.contribution})</span>}
+      {paper.contribution && <strong className="pub-contribution"> ({paper.contribution})</strong>}
 
       {/* Venue */}
       {paper.venue && <span>, <em style={{ color: 'var(--text-muted)' }}>{paper.venue}</em></span>}
@@ -152,6 +119,11 @@ function PaperItem({ paper }: { paper: Paper }) {
         </span>
       )}
 
+      {/* Citation count */}
+      {paper.citations !== undefined && (
+        <span className="pub-citations">Citations: {paper.citations}</span>
+      )}
+
       {/* GitHub Stars */}
       {paper.stars && (
         <a href={`https://github.com/${paper.stars}`} target="_blank" rel="noopener noreferrer" className="pub-stars">
@@ -165,6 +137,7 @@ function PaperItem({ paper }: { paper: Paper }) {
 // Get badge color based on conference/journal/arxiv
 function getBadgeColor(badge: string): string {
   const upper = badge.toUpperCase();
+  if (upper.includes('TECHNICAL REPORT')) return '64748B';
   if (upper.includes('AAAI') || upper.includes('ACM CAISW') || upper.includes('ACM CAIW')) return '007ec6';
   if (upper.includes('CVPR')) return 'blue';
   if (upper.includes('ICCV') || upper.includes('ECCV')) return 'blue';

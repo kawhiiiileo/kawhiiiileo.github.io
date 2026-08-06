@@ -3,7 +3,7 @@ import { experiences } from '@/data/profile';
 export function Experience() {
   return (
     <>
-      <h2 className="section-heading">💻 Internship Experience</h2>
+      <h2 className="section-heading">Internship Experience</h2>
       <ul style={{ listStyle: 'none', paddingLeft: '0' }}>
         {experiences.map((exp, index) => (
           <li key={index} className="compact-list-item">
