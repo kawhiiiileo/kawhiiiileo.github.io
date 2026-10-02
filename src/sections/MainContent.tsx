@@ -3,41 +3,59 @@ import { Publications } from './Publications';
 import { Experience } from './Experience';
 import { Services } from './Services';
 import { Misc } from './Misc';
-import { introText } from '@/data/profile';
+import { Sidebar } from './Sidebar';
+import { introText, profile } from '@/data/profile';
 
 export function MainContent() {
   return (
     <main className="page__content">
-      <span className="anchor" id="about-me"></span>
-      <section className="about-section">
-        <h2 className="section-heading">About Me</h2>
-        <div className="about-copy" dangerouslySetInnerHTML={{ __html: formatIntro(introText) }} />
+      <section id="about-me" className="about-section">
+        <Sidebar />
+        <div className="about-intro">
+          <h2 className="section-heading">About Me</h2>
+          <div className="about-copy" dangerouslySetInnerHTML={{ __html: formatIntro(introText) }} />
+          <div className="research-interests">
+            <h3 className="research-heading">Research Interests</h3>
+            <ul>
+              {profile.researchInterests.map(interest => (
+                <li key={interest.title}>
+                  <span>{interest.title}</span>
+                  <div className="research-works">
+                    {interest.works.map(work => (
+                      <a
+                        key={work.label}
+                        href={work.url}
+                        target={work.url.startsWith('#') ? undefined : '_blank'}
+                        rel={work.url.startsWith('#') ? undefined : 'noopener noreferrer'}
+                      >
+                        {work.label}
+                      </a>
+                    ))}
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <p className="research-note">RSI: recursive self-improvement.</p>
+          </div>
+        </div>
       </section>
 
-      <span className="anchor" id="news"></span>
-      <section>
+      <section id="news">
         <News />
       </section>
 
-      <span className="anchor" id="publications"></span>
-      <section>
+      <section id="publications">
         <Publications />
       </section>
 
-      <span className="anchor" id="experience"></span>
-      <section>
+      <section id="experience">
         <Experience />
       </section>
 
-      <span className="anchor" id="services"></span>
-      <section>
-        <Services />
-      </section>
-
-      <span className="anchor" id="misc"></span>
-      <section>
-        <Misc />
-      </section>
+      <div className="page-footer">
+        <section id="services"><Services /></section>
+        <section id="misc"><Misc /></section>
+      </div>
     </main>
   );
 }

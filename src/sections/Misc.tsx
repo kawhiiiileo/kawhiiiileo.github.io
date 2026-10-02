@@ -4,7 +4,7 @@ export function Misc() {
   return (
     <>
       <h2 className="section-heading">Misc</h2>
-      <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
+      <p className="misc-copy">
         Feel free to connect with me on{' '}
         {miscLinks.map((link, i) => (
           <span key={i}>

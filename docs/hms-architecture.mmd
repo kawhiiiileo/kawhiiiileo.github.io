@@ -1,0 +1,77 @@
+flowchart TB
+    subgraph Clients[调用与产品层]
+        SDK[Python / TypeScript / Go / Rust SDK]
+        CLI[Rust CLI]
+        Console[Next.js Control Plane]
+        Adapters[Agent / Framework Adapters]
+        Direct[直接 Python MemoryEngine]
+        Eval[外部验证与评测客户端]
+    end
+
+    subgraph Entry[服务入口]
+        REST[FastAPI REST]
+        MCP[MCP multi-bank / single-bank]
+        Ext[HTTP / MCP / Tenant / Operation Validator Extensions]
+    end
+
+    subgraph Core[核心数据平面]
+        Engine[MemoryEngine]
+        Retain[Retain Pipeline]
+        Recall[Recall Pipeline]
+        Reflect[Reflect / Agentic Tool Loop]
+        Parser[FileParserRegistry]
+        Async[async_operations DB Broker]
+        Worker[WorkerPoller<br/>内置或独立进程]
+        Config[ConfigResolver]
+        Obs[Consolidation / Mental Models]
+    end
+
+    subgraph Models[模型与算法依赖]
+        LLM[Retain / Reflect / Consolidation LLM]
+        Embed[Embedding Provider]
+        Rerank[Cross-Encoder / Remote Reranker]
+        MM[Multimodal Description Provider]
+    end
+
+    subgraph Persistence[持久化与外部系统]
+        DB[(PostgreSQL / pg0 / Oracle)]
+        ReadDB[(可选 PostgreSQL Recall Read Backend)]
+        Vector[(可选 Milvus Dense Index)]
+        Files[(PostgreSQL / S3 / GCS / Azure FileStorage)]
+        Hooks[Webhook Targets]
+        OTel[Metrics / OpenTelemetry]
+    end
+
+    SDK --> REST
+    CLI --> REST
+    Console --> REST
+    Adapters --> REST
+    Adapters --> MCP
+    Direct --> Engine
+    Eval -. 生产运行时外部 .-> REST
+
+    REST --> Ext --> Engine
+    MCP --> Ext
+    Engine --> Retain
+    Engine --> Recall
+    Engine --> Reflect
+    Engine --> Parser
+    Engine --> Config
+    Engine --> Obs
+    Engine --> Async
+    Async --> Worker --> Engine
+
+    Retain --> LLM
+    Retain --> Embed
+    Recall --> Embed
+    Recall --> Rerank
+    Reflect --> LLM
+    Obs --> LLM
+    Parser --> MM
+
+    Engine --> DB
+    Recall --> ReadDB
+    Recall --> Vector
+    Parser --> Files
+    Engine --> Hooks
+    Engine --> OTel

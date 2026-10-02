@@ -9,12 +9,12 @@ export default defineConfig({
   plugins: [inspectAttr(), react()],
   server: {
     host: "0.0.0.0",
-    allowedHosts: ["dsw-gateway-cn-wulanchabu.data.aliyun.com"],
+    allowedHosts: ["dsw-gateway-cn-wulanchabu.data.aliyun.com", "dsw-gateway-cn-shanghai.data.aliyuncs.com"],
   },
   preview: {
     host: "0.0.0.0",
     port: 5173,
-    allowedHosts: ["dsw-gateway-cn-wulanchabu.data.aliyun.com"],
+    allowedHosts: ["dsw-gateway-cn-wulanchabu.data.aliyun.com", "dsw-gateway-cn-shanghai.data.aliyuncs.com"],
   },
   resolve: {
     alias: {

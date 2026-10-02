@@ -16,6 +16,8 @@ export interface Paper {
   citations?: number;
   links?: { label: string; url: string }[];
   stars?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface NewsItem {
@@ -29,14 +31,6 @@ export interface ServiceItem {
   note?: string;
 }
 
-export interface EducationItem {
-  degree: string;
-  institution: string;
-  period: string;
-  location: string;
-  details: string[];
-}
-
 export interface HonorItem {
   title: string;
   year: string;
@@ -46,20 +40,22 @@ export interface HonorItem {
 export const profile = {
   name: "Yuhang Han",
   nameCN: "韩宇航",
-  title: "Incoming PhD Student",
-  bio: "Incoming PhD Student at SJTU & HKUST (GZ), EPIC Lab. Working on reinforcement learning, on-policy distillation, coding agents, and AI memory.",
+  title: "First-Year PhD Student",
+  bio: "Direct-entry PhD student at HKUST (GZ), EPIC Lab. Working on multimodal acceleration, multimodal reinforcement learning, AI memory (RSI), and coding agents (RSI).",
   email: "kawhiiileo2@gmail.com",
   googleScholar: "https://scholar.google.com/citations?user=I0V2KAEAAAAJ&hl=zh-CN",
-  citations: "208",
+  citations: 206,
   github: "https://github.com/kawhiiiileo",
-  location: "Shanghai, China",
-  avatar: "/avatar.png",
+  location: "Guangzhou, China",
+  avatar: `${import.meta.env.BASE_URL}avatar.png`,
 
   education: {
-    institution: "SJTU & HKUST (GZ)",
+    institution: "HKUST (GZ)",
     lab: "EPIC Lab",
     advisor: "Prof. Linfeng Zhang",
     advisorUrl: "https://www.zhanglinfeng.tech/",
+    coAdvisor: "Prof. Zhijiang Guo",
+    coAdvisorUrl: "https://cartus.github.io/",
     startDate: "Fall 2026",
   },
 
@@ -72,42 +68,51 @@ export const profile = {
   ],
 
   researchInterests: [
-    "Reinforcement Learning & On-Policy Distillation (OPD)",
-    "Coding Agents & AI Memory Systems",
-    "Efficient Multimodal Large Model Inference",
+    {
+      title: "Multimodal Acceleration",
+      works: [
+        { label: "FiCoCo", url: "https://ficoco-accelerate.github.io/" },
+        { label: "GlobalCom²", url: "https://arxiv.org/abs/2501.05179" },
+        { label: "STaR-KV", url: "https://arxiv.org/abs/2606.01790" },
+      ],
+    },
+    {
+      title: "Multimodal Reinforcement Learning",
+      works: [
+        { label: "KAWHI", url: "https://kawhiiiileo.github.io/KAWHI_PAGE/" },
+        { label: "Innovator-VL", url: "https://innovatorlm.github.io/Innovator-VL/" },
+      ],
+    },
+    {
+      title: "AI Memory (RSI)",
+      works: [
+        { label: "HMS", url: "https://github.com/Shadow-Weave/HMS" },
+      ],
+    },
+    {
+      title: "Coding Agents (RSI)",
+      works: [
+        { label: "Endless Frontier · Ongoing", url: "#experience" },
+      ],
+    },
   ],
 };
 
-export const educationItems: EducationItem[] = [
-  {
-    degree: "Ph.D. in Computer Science and Technology (Incoming)",
-    institution: "SJTU & HKUST (GZ)",
-    period: "Aug. 2026 – Expected 2030",
-    location: "Shanghai & Guangzhou, China",
-    details: [
-      "Advisor: Prof. Linfeng Zhang, SJTU EPIC Lab",
-      "Research focus: Efficient Multimodal Large Language Models and Reinforcement Learning",
-    ],
-  },
-  {
-    degree: "B.S. in Computer Science and Technology",
-    institution: "Northeast Forestry University (211)",
-    period: "Sep. 2021 – Jul. 2025",
-    location: "Harbin, China",
-    details: [
-      "GPA: 89.04/100",
-      "Core courses: Machine Learning (98), Algorithms and Data Structures (95), Linear Algebra (96), Probability Theory and Mathematical Statistics (99)",
-    ],
-  },
-];
-
 // Intro paragraph
-export const introText = `👋 Hi! I am Yuhang Han (韩宇航 in Chinese). I am an Incoming PhD student (Fall 2026) in the joint program between SJTU (EPIC Lab) and HKUST (GZ), working under Prof. Linfeng Zhang. I also collaborate closely with Dr. Siteng Huang at DAMO Academy, Alibaba Group.
+export const introText = `I am a **first-year direct-entry PhD student at HKUST (GZ)**, advised by [Prof. Linfeng Zhang](https://www.zhanglinfeng.tech/) (primary advisor, SJTU EPIC Lab) and [Prof. Zhijiang Guo](https://cartus.github.io/) (HKUST (GZ)). I also collaborate closely with [Dr. Siteng Huang](https://kyonhuang.top/) at DAMO Academy, Alibaba Group.
 
-🔬 My research focuses on **reinforcement learning (RL)** and **on-policy distillation (OPD)** for large language and multimodal models. I am also exploring **coding agents** and **AI memory systems**, while continuing to work on efficient MLLM inference, including training-free token reduction, global-to-local compression, and KV-cache optimization.`;
+I am currently a research intern at **Endless Frontier**, focusing on **coding agents for recursive self-improvement (RSI)**.`;
 
 // News items - format matching reference project
 export const recentNews: NewsItem[] = [
+  {
+    date: "2026/09",
+    content: `[NeurIPS'26] [TwinRouterBench](https://arxiv.org/abs/2605.18859) has been accepted to **NeurIPS 2026**! See [Code](https://github.com/CommonstackAI/TwinRouterBench) for more details.`,
+  },
+  {
+    date: "2026/09",
+    content: `[TMLR] [MAPGD](https://arxiv.org/abs/2509.11361) has been accepted to **Transactions on Machine Learning Research (TMLR)**! See [Code](https://github.com/kawhiiiileo/MAPGD) for more details.`,
+  },
   {
     date: "2026/06",
     content: `[ECCV'26] [KAWHI](https://kawhiiiileo.github.io/KAWHI_PAGE/) got accepted to ECCV 2026!`,
@@ -156,7 +161,23 @@ export const olderNews: NewsItem[] = [
 // Publications - Conference Papers
 export const conferencePapers: Paper[] = [
   {
+    badge: "NeurIPS-2026",
+    image: "twinrouter.png",
+    imageAlt: "TwinRouterBench project overview",
+    authors: "P Yang, W Chen, T Yang, P Feng, J Xing, W Guo, Y Yao, Yuhang Han, H Li, et al.",
+    title: "TwinRouterBench: Fast Static and Live Dynamic Evaluation for Realistic Agentic LLM Routing",
+    venue: "Conference on Neural Information Processing Systems (NeurIPS)",
+    note: "Accepted in September 2026",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2605.18859" },
+      { label: "github", url: "https://github.com/CommonstackAI/TwinRouterBench" },
+    ],
+    stars: "CommonstackAI/TwinRouterBench",
+  },
+  {
     badge: "ECCV-2026",
+    image: "kawhi.png",
+    imageAlt: "KAWHI method overview",
     authors: "Yuhang Han†, Yuyang Wu, Zhengbo Jiao, Yiyu Wang, Xuyang Liu, Shaobo Wang, Hanlin Xu, Xuming Hu, Linfeng Zhang✉",
     title: "Bridging Visual Representation and Reinforcement Learning from Verifiable Rewards in Large Vision-Language Models",
     venue: "European Conference on Computer Vision (ECCV)",
@@ -170,13 +191,14 @@ export const conferencePapers: Paper[] = [
     badgeUrl: "https://ojs.aaai.org/index.php/AAAI/article/view/33131",
     authors: "Xuyang Liu, Ziming Wang, Yuhang Han, Yingyao Wang, Jiale Yuan, Jun Song, Bo Zheng, Linfeng Zhang, Siteng Huang, Honggang Chen✉",
     title: "Compression with Global Guidance: Towards Training-free High-Resolution MLLMs Acceleration",
+    image: "globalcom.jpg",
+    imageAlt: "GlobalCom² compression framework",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence",
     note: "CCF A",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2501.05179" },
       { label: "github", url: "https://github.com/xuyang-liu16/GlobalCom2" },
     ],
-    citations: 53,
     stars: "xuyang-liu16/GlobalCom2",
   },
   {
@@ -184,6 +206,8 @@ export const conferencePapers: Paper[] = [
     badgeUrl: "https://ojs.aaai.org/index.php/AAAI/article/view/33131",
     authors: "Yuhang Han*†, Xuyang Liu*, Pengxiang Ding, Donglin Wang, Honggang Chen, Qingsen Yan, Siteng Huang✉",
     title: "Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration",
+    image: "ficoco.png",
+    imageAlt: "FiCoCo token reduction framework",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence",
     note: "CCF A",
     links: [
@@ -191,44 +215,39 @@ export const conferencePapers: Paper[] = [
       { label: "project page", url: "https://ficoco-accelerate.github.io/" },
       { label: "github", url: "https://github.com/kawhiiiileo/FiCoCo" },
     ],
-    citations: 55,
     stars: "kawhiiiileo/FiCoCo",
-  },
-  {
-    badge: "ICIC-2024",
-    authors: "Junhong Li, Renxiang Guan, Yuhang Han, Yaowen Hu, Zihao Li, Yanyan Wu, Ziwei Xu, Xianju Li✉",
-    title: "Superpixel-based Dual-neighborhood Contrastive Graph Autoencoder for Deep Subspace Clustering of Hyperspectral Image",
-    venue: "International Conference on Intelligent Computing",
-    note: "CCF C",
-  },
-  {
-    badge: "ACM CAISW 2026",
-    authors: "Pei Yang, Wanyi Chen, Tongyun Yang, Pengbin Feng, Jiarong Xing, Wentao Guo, Yuhang Yao, Yuhang Han, Hanchen Li, Xu Wang, Zeyu Wang, Jie Xiao, Anjie Yang, Lynn Ai, Eric Yang, et al.",
-    title: "TwinRouterBench: Fast Static and Live Dynamic Evaluation for Realistic Agentic LLM Routing",
-    venue: "ACM CAISW 2026",
-    note: "Workshop Poster",
-  },
-  {
-    badge: "ACM CAISW 2026",
-    authors: "Yuhang Yao, Zeyu Wang, Tongyun Yang, Wanyi Chen, Yuhang Han, Jie Xiao, Chengke Bao, Tianyu Shi✉",
-    title: "MERA: Model Evolution and Routing with Skill Adaptation for Agentic Systems at Scale",
-    venue: "ACM CAISW 2026",
-    note: "Workshop Poster",
+    citations: 62,
   },
 ];
 
 // Publications - Journal Papers
 export const journalPapers: Paper[] = [
   {
+    badge: "TMLR-2026",
+    image: "mapgd.png",
+    imageAlt: "MAPGD multi-agent prompt optimization workflow",
+    authors: "Yichen Han*, Yuhang Han*†, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He, Tianyu Shi✉",
+    title: "MAPGD: Multi-Agent Prompt Gradient Descent for Collaborative Prompt Optimization",
+    venue: "Transactions on Machine Learning Research (TMLR)",
+    note: "Accepted in September 2026",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2509.11361" },
+      { label: "github", url: "https://github.com/kawhiiiileo/MAPGD" },
+    ],
+    stars: "kawhiiiileo/MAPGD",
+  },
+  {
     badge: "RS-2024",
+    image: "luffd-method.png",
+    imageAlt: "LUFFD-YOLO method: the proposed ESDC2f module with multi-head self-attention (Figure 5)",
     authors: "Y Han, B Duan, R Guan, G Yang, Z Zhen✉",
     title: "LUFFD-YOLO: A Lightweight Model for UAV Remote Sensing Forest Fire Detection Based on Attention Mechanism and Multi-Level Feature Fusion",
     venue: "Remote Sensing",
     note: "CAAI B & Q1",
+    citations: 66,
     links: [
       { label: "paper", url: "https://www.mdpi.com/2072-4292/16/12/2177" },
     ],
-    citations: 57,
   },
 ];
 
@@ -237,6 +256,8 @@ export const technicalReports: Paper[] = [
   {
     badge: "Technical Report",
     title: "Holographic Memory System (HMS)",
+    image: "hms-main.png",
+    imageAlt: "HMS main framework: memory intent planning, evidence reconstruction, and state compilation and response generation",
     venue: "Technical report",
     contribution: "Contributed to memory system design (first author)",
     links: [
@@ -247,6 +268,8 @@ export const technicalReports: Paper[] = [
   {
     badge: "Technical Report",
     title: "Innovator-VL: A Multimodal Large Language Model for Scientific Discovery",
+    image: "innovator.png",
+    imageAlt: "Innovator-VL model architecture",
     venue: "Technical report, arXiv:2601.19325",
     contribution: "Contributed to scientific training data for SFT and RL",
     links: [
@@ -260,18 +283,9 @@ export const technicalReports: Paper[] = [
 // Publications - Preprints
 export const preprints: Paper[] = [
   {
-    badge: "arXiv-2509.11361",
-    authors: "Yichen Han*, Yuhang Han*†, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He, Tianyu Shi✉",
-    title: "MAPGD: Multi-Agent Prompt Gradient Descent for Collaborative Prompt Optimization",
-    venue: "arXiv preprint arXiv:2509.11361",
-    links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2509.11361" },
-      { label: "github", url: "https://github.com/kawhiiiileo/MAPGD" },
-    ],
-    stars: "kawhiiiileo/MAPGD",
-  },
-  {
     badge: "arXiv-2606.01790",
+    image: "star-kv.png",
+    imageAlt: "STaR-KV spatio-temporal KV cache compression framework",
     authors: "Yuhang Han*†, Wenzheng Yang*, Yujie Chen, Xiangqi Jin, Yaojie Zhang, Siteng Huang, Linfeng Zhang✉",
     title: "STaR-KV: Spatio-Temporal Adaptive Re-weighting for KV Cache Compression in GUI Vision-Language Models",
     venue: "arXiv preprint arXiv:2606.01790",
@@ -284,6 +298,8 @@ export const preprints: Paper[] = [
   },
   {
     badge: "arXiv-2605.20022",
+    image: "flexdraft.png",
+    imageAlt: "FlexDraft speculative decoding pipeline",
     authors: "Y Zhang, J Huang, Junlong Ke, Yuhang Han, Y Long, T Zhao, B Qi, Linfeng Zhang✉",
     title: "FlexDraft: Flexible Speculative Decoding via Attention Tuning and Bonus-Guided Calibration",
     venue: "arXiv preprint arXiv:2605.20022",
@@ -292,26 +308,25 @@ export const preprints: Paper[] = [
       { label: "arXiv", url: "https://arxiv.org/abs/2605.20022" },
     ],
   },
-  {
-    badge: "arXiv-2605.18859",
-    authors: "P Yang, W Chen, T Yang, P Feng, J Xing, W Guo, Y Yao, Yuhang Han, H Li, et al.",
-    title: "TwinRouterBench: Fast Static and Live Dynamic Evaluation for Realistic Agentic LLM Routing",
-    venue: "arXiv preprint arXiv:2605.18859",
-    note: "Under review (NeurIPS 2026)",
-    links: [
-      { label: "arXiv", url: "https://arxiv.org/abs/2605.18859" },
-      { label: "github", url: "https://github.com/CommonstackAI/TwinRouterBench" },
-    ],
-    stars: "CommonstackAI/TwinRouterBench",
-  },
 ];
 
 // Experience
 export const experiences = [
   {
     role: "Research Intern",
+    institution: "Endless Frontier",
+    logo: "endless-frontier.png",
+    organizationUrl: "https://endlessfrontier.tech/",
+    period: "Present",
+    topic: "Coding agents for recursive self-improvement (RSI)",
+    outputs: [],
+  },
+  {
+    role: "Research Intern",
     institution: "DP Technology",
-    period: "May 2026 – Present",
+    logo: "dp-technology.png",
+    organizationUrl: "https://www.dp.tech/en",
+    period: "June 2026 – September 2026",
     location: "Shanghai, China",
     team: "Foundation Model / Base Model group",
     topic: "Foundation model post-training, reinforcement learning, and on-policy distillation",
@@ -320,6 +335,8 @@ export const experiences = [
   {
     role: "Research Intern",
     institution: "QwenC, Alibaba",
+    logo: "qwen.png",
+    organizationUrl: "https://qwen.ai/",
     period: "April 2026 – May 2026",
     location: "Guangzhou, China",
     team: "Multimodal Reasoning & Agent Team",
@@ -329,6 +346,8 @@ export const experiences = [
   {
     role: "Research Assistant",
     institution: "EPIC Lab, Shanghai Jiao Tong University",
+    logo: "epic.jpg",
+    organizationUrl: "https://www.zhanglinfeng.tech/",
     period: "October 2025 – Present",
     location: "Shanghai, China",
     advisor: "Prof. Linfeng Zhang",
@@ -342,6 +361,8 @@ export const experiences = [
   {
     role: "Research Assistant",
     institution: "MiLab, Westlake University",
+    logo: "westlake.png",
+    organizationUrl: "https://milab.westlake.edu.cn/",
     period: "Aug. 2024 – Dec. 2024",
     location: "Hangzhou, China",
     advisor: "Dr. Siteng Huang, Prof. Donglin Wang",
@@ -380,13 +401,11 @@ export const journalServices: ServiceItem[] = [];
 // Misc
 export const miscLinks = [
   { text: "GitHub", url: "https://github.com/kawhiiiileo" },
-  { text: "Google Scholar", url: profile.googleScholar },
 ];
 
 // Social links for sidebar
 export const socialLinks = [
-  { icon: "🎓", label: "Google Scholar", url: profile.googleScholar },
   { icon: "💻", label: "GitHub", url: profile.github },
   { icon: "📧", label: "Email", url: profile.email ? `mailto:${profile.email}` : "" },
-  { icon: "📍", label: "Shanghai, China", url: "" },
+  { icon: "📍", label: profile.location, url: "" },
 ];
