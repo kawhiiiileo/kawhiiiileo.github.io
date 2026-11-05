@@ -44,7 +44,7 @@ export const profile = {
   bio: "Direct-entry PhD student at HKUST (GZ), EPIC Lab. Working on multimodal acceleration, multimodal reinforcement learning, AI memory (RSI), and coding agents (RSI).",
   email: "kawhiiileo2@gmail.com",
   googleScholar: "https://scholar.google.com/citations?user=I0V2KAEAAAAJ&hl=zh-CN",
-  citations: 206,
+  citations: 326,
   github: "https://github.com/kawhiiiileo",
   location: "Guangzhou, China",
   avatar: `${import.meta.env.BASE_URL}avatar.png`,
@@ -200,6 +200,7 @@ export const conferencePapers: Paper[] = [
       { label: "github", url: "https://github.com/xuyang-liu16/GlobalCom2" },
     ],
     stars: "xuyang-liu16/GlobalCom2",
+    citations: 65,
   },
   {
     badge: "AAAI-2026",
@@ -216,7 +217,7 @@ export const conferencePapers: Paper[] = [
       { label: "github", url: "https://github.com/kawhiiiileo/FiCoCo" },
     ],
     stars: "kawhiiiileo/FiCoCo",
-    citations: 62,
+    citations: 67,
   },
 ];
 
@@ -244,7 +245,7 @@ export const journalPapers: Paper[] = [
     title: "LUFFD-YOLO: A Lightweight Model for UAV Remote Sensing Forest Fire Detection Based on Attention Mechanism and Multi-Level Feature Fusion",
     venue: "Remote Sensing",
     note: "CAAI B & Q1",
-    citations: 66,
+    citations: 69,
     links: [
       { label: "paper", url: "https://www.mdpi.com/2072-4292/16/12/2177" },
     ],
