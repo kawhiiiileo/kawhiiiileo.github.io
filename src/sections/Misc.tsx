@@ -3,7 +3,7 @@ import { miscLinks } from '@/data/profile';
 export function Misc() {
   return (
     <>
-      <h2 className="section-heading">Misc</h2>
+      <h2 id="misc-heading" className="section-heading">Misc</h2>
       <p className="misc-copy">
         Feel free to connect with me on{' '}
         {miscLinks.map((link, i) => (

@@ -1,122 +1,216 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ZoomIn } from 'lucide-react';
 import { conferencePapers, journalPapers, preprints, profile, technicalReports } from '@/data/profile';
 import type { Paper } from '@/data/profile';
 import { CitationBadge } from '@/components/CitationBadge';
+import { ScholarCitations } from '@/components/ScholarCitations';
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { loadScholarSnapshot, scholarPaperCitations } from '@/lib/scholar';
+import type { ScholarSnapshot } from '@/lib/scholar';
 
-type PublicationKind = 'conference' | 'journal' | 'report' | 'preprint';
+interface PaperGroup {
+  topic?: string;
+  papers: readonly Paper[];
+}
+
+const allPapers = [...conferencePapers, ...journalPapers, ...technicalReports, ...preprints];
+const topicGroups: PaperGroup[] = [
+  { topic: 'Multimodal Acceleration', papers: [conferencePapers[2], conferencePapers[3], ...preprints.filter(paper => paper.topic === 'multimodal-acceleration')] },
+  { topic: 'Multimodal Reinforcement Learning', papers: [conferencePapers[1], ...preprints.filter(paper => paper.topic === 'multimodal-rl')] },
+  { topic: 'Asynchronous Reinforcement Learning', papers: preprints.filter(paper => paper.topic === 'asynchronous-rl') },
+  { topic: 'Multi-Agent Prompt Optimization', papers: [journalPapers[0]] },
+  { topic: 'Agentic Systems & Routing', papers: [conferencePapers[0]] },
+  { topic: 'Other topics', papers: [journalPapers[1], ...technicalReports, ...preprints.filter(paper => !paper.topic)] },
+];
+
+const publicationViews = [
+  { id: 'pub-all', label: 'All papers', groups: [{ papers: allPapers }] },
+  { id: 'pub-topic', label: 'By topic', groups: topicGroups },
+  { id: 'pub-preprints', label: 'Preprints', groups: [{ papers: preprints }] },
+] as const;
+
+const authorshipSections = [
+  { title: 'First & Co-first Author', lead: true },
+  { title: 'Other Work', lead: false },
+];
+
+type ViewId = (typeof publicationViews)[number]['id'];
 
 export function Publications() {
-  const [viewMode, setViewMode] = useState<'all' | 'selected'>('all');
+  const [viewId, setViewId] = useState<ViewId>(() => (
+    window.location.hash === '#preprints' ? 'pub-preprints' : 'pub-all'
+  ));
+  const [scholar, setScholar] = useState<ScholarSnapshot | null>(null);
+  const latestTotal = scholar && Date.parse(scholar.updated) >= Date.parse(profile.citationsSavedOn)
+    ? scholar
+    : null;
+
+  useEffect(() => {
+    const controller = new AbortController();
+    void loadScholarSnapshot(profile.googleScholar, controller.signal)
+      .then((snapshot) => {
+        if (!controller.signal.aborted) setScholar(snapshot);
+      })
+      .catch(() => {});
+    return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    function syncPublicationHash() {
+      if (window.location.hash === '#preprints') setViewId('pub-preprints');
+      if (window.location.hash === '#publications') {
+        setViewId((current) => current === 'pub-preprints' ? 'pub-all' : current);
+      }
+    }
+
+    window.addEventListener('hashchange', syncPublicationHash);
+    return () => window.removeEventListener('hashchange', syncPublicationHash);
+  }, []);
+
+  function changeView(next: ViewId) {
+    setViewId(next);
+    if (next === 'pub-preprints' || window.location.hash === '#preprints') {
+      window.history.replaceState(window.history.state, '', next === 'pub-preprints' ? '#preprints' : '#publications');
+    }
+  }
 
   return (
     <>
       <div className="section-header">
-        <h2 className="section-heading">Publications</h2>
-        <CitationBadge count={profile.citations} label="Total citations" />
+        <h2 id="publications-heading" className="section-heading">Publications</h2>
+        <ScholarCitations
+          count={latestTotal?.total ?? profile.citations}
+          href={profile.googleScholar}
+          updated={latestTotal?.updated ?? profile.citationsSavedOn}
+          synced={latestTotal !== null}
+        />
       </div>
-      <div className="publication-toolbar">
-        <p className="publication-legend">* Equal contribution · † Project head · ✉ Corresponding author</p>
-        <div className="pub-toggle" role="group" aria-label="Publications view">
-          <button type="button" className={`pub-toggle-btn ${viewMode === 'all' ? 'is-active' : ''}`}
-            onClick={() => setViewMode('all')} aria-pressed={viewMode === 'all'} aria-controls="pub-all">
-            All papers
-          </button>
-          <button type="button" className={`pub-toggle-btn ${viewMode === 'selected' ? 'is-active' : ''}`}
-            onClick={() => setViewMode('selected')} aria-pressed={viewMode === 'selected'} aria-controls="pub-selected">
-            By topic
-          </button>
+
+      <div className="chapter-content" id="preprints">
+        <div className="publication-toolbar">
+          <div className="pub-toggle" role="group" aria-label="Publications view">
+            {publicationViews.map(({ id, label }) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => changeView(id)}
+                aria-pressed={viewId === id}
+                aria-controls={id}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div id="pub-all" className={`pub-panel ${viewMode === 'all' ? '' : 'is-hidden'}`}>
-        <PaperSection title="Peer-reviewed Conference" papers={conferencePapers} kind="conference" />
-        <PaperSection title="Peer-reviewed Journal" papers={journalPapers} kind="journal" />
-        <PaperSection title="Technical Reports" papers={technicalReports} kind="report" />
-        <PaperSection title="Preprints & Under Submission" papers={preprints} kind="preprint" />
-      </div>
-
-      <div id="pub-selected" className={`pub-panel ${viewMode === 'selected' ? '' : 'is-hidden'}`}>
-        <PaperSection title="Multimodal Acceleration" papers={[conferencePapers[2], conferencePapers[3], preprints[0]]} />
-        <PaperSection title="Multimodal Reinforcement Learning" papers={[conferencePapers[1]]} />
-        <PaperSection title="Multi-Agent Prompt Optimization" papers={[journalPapers[0]]} />
-        <PaperSection title="Agentic Systems & Routing" papers={[conferencePapers[0]]} />
-        <PaperSection title="Other Works" papers={[journalPapers[1], ...technicalReports, preprints[1]]} />
+        {publicationViews.map(({ id, groups }) => (
+          <div key={id} id={id} hidden={viewId !== id}>
+            {viewId === id && <PaperList groups={groups} scholar={scholar} />}
+          </div>
+        ))}
+        <p className="publication-legend">* Equal contribution · † Project head · ✉ Corresponding author</p>
       </div>
     </>
   );
 }
 
-function PaperSection({ title, papers, kind }: { title: string; papers: Paper[]; kind?: PublicationKind }) {
-  if (papers.length === 0) return null;
-  return (
-    <div className={`pub-section${kind ? ` pub-section--${kind}` : ''}`}>
-      <h3 className="pub-section-title">{title}<span>{papers.length}</span></h3>
-      {papers.map((paper) => <PaperItem key={paper.title} paper={paper} />)}
-    </div>
-  );
+function PaperList({ groups, scholar }: { groups: readonly PaperGroup[]; scholar: ScholarSnapshot | null }) {
+  return authorshipSections.map(({ title, lead }) => {
+    const matchingGroups = groups
+      .map(({ topic, papers }) => ({ topic, papers: papers.filter(paper => Boolean(paper.authorship) === lead) }))
+      .filter(({ papers }) => papers.length > 0);
+
+    if (matchingGroups.length === 0) return null;
+
+    return (
+      <section className="pub-section" key={title} aria-label={title}>
+        <h3 className="pub-section-title">{title}</h3>
+        {matchingGroups.map(({ topic, papers }) => (
+          <div className={topic ? 'pub-topic-group' : undefined} key={topic ?? title}>
+            {topic && <h4 className="pub-topic-title">{topic}</h4>}
+            {papers.map((paper) => (
+              <PaperItem
+                key={paper.title}
+                paper={paper}
+                heading={topic ? 'h5' : 'h4'}
+                citations={scholarPaperCitations(scholar, paper.title) ?? paper.citations}
+              />
+            ))}
+          </div>
+        ))}
+      </section>
+    );
+  });
 }
 
-function PaperItem({ paper }: { paper: Paper }) {
-  const isTechnicalReport = paper.badge === 'Technical Report';
-  const badgeVariant = isTechnicalReport ? 'report' : paper.badge.startsWith('arXiv') ? 'preprint'
-    : /^(TMLR|RS)-/.test(paper.badge) ? 'journal' : 'conference';
-  const badgeLabel = paper.badge.startsWith('arXiv') ? 'arXiv' : paper.badge.replace('-', ' ');
-  const badgeContent = (
-    <>
-      {isTechnicalReport && (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-          <path d="M14 2v6h6M8 13h8M8 17h5" />
-        </svg>
-      )}
-      {badgeLabel}
-    </>
-  );
+function PaperItem({ paper, heading: Heading, citations }: { paper: Paper; heading: 'h4' | 'h5'; citations?: number }) {
+  const isPreprint = paper.badge.startsWith('arXiv-');
+  const venueLabel = isPreprint ? paper.badge.replace('arXiv-', 'Preprint · arXiv:') : paper.badge.replace('-', ' ');
+  const primaryLink = paper.links?.find(({ label }) => label === 'arXiv' || label === 'paper')
+    ?? paper.links?.[0];
 
   return (
-    <article className="pub-item">
-      <h4 className="pub-title">
-        {paper.badgeUrl ? (
-          <a className={`pub-badge pub-badge--${badgeVariant}`} href={paper.badgeUrl} target="_blank" rel="noopener noreferrer">{badgeContent}</a>
-        ) : (
-          <span className={`pub-badge pub-badge--${badgeVariant}`}>{badgeContent}</span>
-        )}
-        {paper.title}
-        {paper.oral && <span className="pub-oral"> (Oral)</span>}
-      </h4>
-      {paper.authors && <p className="pub-authors">{highlightAuthor(paper.authors)}</p>}
-      {paper.contribution && <p className="pub-contribution">{paper.contribution}</p>}
-      <div className="pub-meta">
-        <span className="pub-venue">
-          {paper.venue && <em>{paper.venue}</em>}
-          {paper.note && <span className="pub-note"> · {paper.note}</span>}
-        </span>
-        {paper.links && paper.links.length > 0 && (
-          <span className="pub-links">
-            {paper.links.map((link) => (
-              <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  {link.label === 'github' ? (
-                    <path d="m5 4-4 4 4 4m6-8 4 4-4 4M9 2 7 14" />
-                  ) : link.label === 'project page' ? (
-                    <path d="M6 3H3v10h10v-3M9 2h5v5M14 2 7 9" />
-                  ) : (
-                    <path d="M9 1H3v14h10V5L9 1Zm0 0v4h4M6 8h4M6 11h4" />
-                  )}
-                </svg>
+    <article className={paper.image ? 'pub-item' : 'pub-item pub-item--text'}>
+      <div className="pub-entry">
+        <Heading className="pub-title">
+          {primaryLink
+            ? <a href={primaryLink.url} target="_blank" rel="noopener noreferrer">{paper.title}</a>
+            : paper.title}
+        </Heading>
+        {paper.authors && <p className="pub-authors">{highlightAuthor(paper.authors)}</p>}
+        {paper.contribution && <p className="pub-contribution">{paper.contribution}</p>}
+        <p className="pub-venue">
+          {paper.badgeUrl
+            ? <a href={paper.badgeUrl} target="_blank" rel="noopener noreferrer" title={paper.venue}>{venueLabel}</a>
+            : <span title={paper.venue}>{venueLabel}</span>}
+          {paper.oral && <span> · Oral</span>}
+          {paper.note && <span> · {paper.note}</span>}
+        </p>
+        <div className="pub-meta">
+          {paper.links?.map((link, index) => (
+            <span key={link.url}>
+              {index > 0 && <span className="link-separator" aria-hidden="true"> · </span>}
+              <a
+                className={link.label === 'github' ? 'pub-action pub-action--code' : 'pub-action'}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {link.label === 'github' ? 'Code' : link.label === 'project page' ? 'Project' : link.label === 'paper' ? 'Paper' : link.label}
               </a>
-            ))}
-          </span>
-        )}
-        {paper.citations !== undefined && <CitationBadge count={paper.citations} />}
-        {paper.stars && (
-          <a href={`https://github.com/${paper.stars}`} target="_blank" rel="noopener noreferrer" className="pub-stars" aria-label={`GitHub stars for ${paper.stars}`}>
-            <img src={`https://img.shields.io/github/stars/${paper.stars}?style=social&label=Stars`} alt="GitHub stars" height="18" loading="lazy" />
-          </a>
-        )}
+            </span>
+          ))}
+          {citations !== undefined && <CitationBadge count={citations} />}
+          {paper.stars && (
+            <a href={'https://github.com/' + paper.stars} target="_blank" rel="noopener noreferrer" className="pub-stars" aria-label={'GitHub stars for ' + paper.stars}>
+              <img src={'https://img.shields.io/github/stars/' + paper.stars + '?style=social&label=Stars'} alt="GitHub stars" height="17" loading="lazy" />
+            </a>
+          )}
+        </div>
       </div>
+      {paper.image && <PaperFigure image={paper.image} title={paper.title} alt={paper.imageAlt ?? ''} />}
     </article>
+  );
+}
+
+function PaperFigure({ image, title, alt }: { image: string; title: string; alt: string }) {
+  const src = import.meta.env.BASE_URL + 'images/papers/' + image;
+
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button type="button" className="pub-figure" aria-label={'Enlarge figure for ' + title}>
+          <img src={src} alt="" width={160} height={96} loading="lazy" decoding="async" />
+          <span className="pub-figure-label" aria-hidden="true"><ZoomIn size={16} /></span>
+        </button>
+      </DialogTrigger>
+      <DialogContent className="pub-figure-dialog">
+        <DialogTitle>{title}</DialogTitle>
+        <DialogDescription className="sr-only">Open the original image to inspect it at full resolution.</DialogDescription>
+        <img className="pub-figure-expanded" src={src} alt={alt} />
+        <a className="pub-figure-original" href={src} target="_blank" rel="noopener noreferrer">Open original image</a>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -124,7 +218,7 @@ function highlightAuthor(authors: string): React.ReactNode {
   const parts = authors.split(/(Yuhang Han(?:[*†✉]*)?|Y Han(?:[*†✉]*)?)/);
   return parts.map((part, i) => {
     if (/^(Yuhang Han|Y Han)(?:[*†✉]*)?$/.test(part)) {
-      return <u key={i} className="author-highlight">{part}</u>;
+      return <strong key={i} className="author-highlight">{part}</strong>;
     }
     return <span key={i}>{part}</span>;
   });

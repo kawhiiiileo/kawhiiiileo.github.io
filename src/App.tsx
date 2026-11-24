@@ -3,17 +3,11 @@ import { MainContent } from '@/sections/MainContent';
 
 function App() {
   return (
-    <div className="site-shell">
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
       <Navigation />
-
-      <div id="main">
-        <article className="page" itemScope itemType="http://schema.org/CreativeWork">
-          <div className="page__inner-wrap">
-            <MainContent />
-          </div>
-        </article>
-      </div>
-    </div>
+      <MainContent />
+    </>
   );
 }
 

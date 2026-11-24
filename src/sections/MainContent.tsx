@@ -8,66 +8,82 @@ import { introText, profile } from '@/data/profile';
 
 export function MainContent() {
   return (
-    <main className="page__content">
-      <section id="about-me" className="about-section">
-        <Sidebar />
-        <div className="about-intro">
-          <h2 className="section-heading">About Me</h2>
-          <div className="about-copy" dangerouslySetInnerHTML={{ __html: formatIntro(introText) }} />
-          <div className="research-interests">
-            <h3 className="research-heading">Research Interests</h3>
-            <ul>
-              {profile.researchInterests.map(interest => (
-                <li key={interest.title}>
-                  <span>{interest.title}</span>
-                  <div className="research-works">
-                    {interest.works.map(work => (
+    <main id="main" tabIndex={-1}>
+      <div className="page-width">
+        <section id="about-me" className="about-section" aria-labelledby="profile-name">
+          <div className="profile-identity">
+            <p className="profile-affiliation">{profile.education.institution} · {profile.education.lab}</p>
+            <div className="profile-heading">
+              <h1 id="profile-name">{profile.name}</h1>
+              <p className="profile-byline"><span lang="zh-Hans">{profile.nameCN}</span> <span>{profile.location}</span></p>
+            </div>
+          </div>
+
+          <Sidebar />
+
+          <div className="about-intro">
+            <div className="about-copy" dangerouslySetInnerHTML={{ __html: formatIntro(introText) }} />
+            <ul className="profile-links" aria-label="Contact and profiles">
+              <li><a href={profile.googleScholar} target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+              <li><a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href={'mailto:' + profile.email}>Email</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="research-interests" aria-labelledby="research-heading">
+          <h2 id="research-heading">Research interests</h2>
+          <ul>
+            {profile.researchInterests.map((interest) => (
+              <li key={interest.title}>
+                <h3>{interest.title}</h3>
+                <div className="research-works">
+                  {interest.works.map((work, index) => (
+                    <span key={work.label}>
+                      {index > 0 && <span className="link-separator" aria-hidden="true"> · </span>}
                       <a
-                        key={work.label}
                         href={work.url}
                         target={work.url.startsWith('#') ? undefined : '_blank'}
                         rel={work.url.startsWith('#') ? undefined : 'noopener noreferrer'}
                       >
                         {work.label}
                       </a>
-                    ))}
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <p className="research-note">RSI: recursive self-improvement.</p>
-          </div>
-        </div>
-      </section>
+                    </span>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
 
-      <section id="news">
-        <News />
-      </section>
+      <div className="page-width">
+        <section id="publications" className="chapter" aria-labelledby="publications-heading">
+          <Publications />
+        </section>
 
-      <section id="publications">
-        <Publications />
-      </section>
+        <section id="news" className="chapter" aria-labelledby="news-heading">
+          <News />
+        </section>
 
-      <section id="experience">
-        <Experience />
-      </section>
+        <section id="experience" className="chapter" aria-labelledby="experience-heading">
+          <Experience />
+        </section>
 
-      <div className="page-footer">
-        <section id="services"><Services /></section>
-        <section id="misc"><Misc /></section>
+        <footer className="page-footer">
+          <section id="services" aria-labelledby="services-heading"><Services /></section>
+          <section id="misc" aria-labelledby="misc-heading"><Misc /></section>
+        </footer>
       </div>
     </main>
   );
 }
 
-// Simple markdown-like formatting for intro text
 function formatIntro(text: string): string {
-  // Convert **bold** to <strong>
   let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  // Convert [text](url) to <a href="url">text</a>
-  html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-  // Convert newlines to <br> + proper paragraph spacing
-  html = html.split('\n\n').map(p => `<p>${p}</p>`).join('');
-  html = html.replace(/\n/g, '<br>');
-  return html;
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+  return html
+    .split('\n\n')
+    .map((paragraph) => '<p>' + paragraph.replace(/\n/g, '<br>') + '</p>')
+    .join('');
 }

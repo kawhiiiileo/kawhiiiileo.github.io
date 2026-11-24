@@ -1,9 +1,23 @@
-# Citation counts
+# Google Scholar citation counts
 
-The homepage uses manually maintained counts in `src/data/profile.ts`:
-`profile.citations` for the total and each paper's optional `citations` field for
-individual counts. Only papers with an explicit count show a citation badge.
+The homepage reads `public/gs_data_shieldsio.json` when it loads. It checks that
+the snapshot belongs to the linked Scholar profile and shows its sync date. An
+individual paper uses the snapshot count when its title matches a single Scholar
+record. The saved counts in `src/data/profile.ts` cover missing snapshots and
+unmatched papers.
 
-The standalone Scholar crawler is retained for reference. It is not run by the
-deployment workflow, and the homepage does not fetch its JSON output. Updating
-that output will not overwrite the manually maintained citation counts.
+The GitHub Pages workflow attempts a refresh every six hours and on manual runs.
+If Scholar declines the request, the workflow reuses the last successful snapshot
+from its cache. If there is no cached snapshot yet, the site shows the saved
+counts and date.
+
+To refresh a local checkout and rebuild the static preview:
+
+```sh
+python -m pip install -r google_scholar_crawler/requirements.txt
+python -m google_scholar_crawler.main
+npm run build
+```
+
+The crawler validates the author and all counts before atomically replacing the
+snapshot.

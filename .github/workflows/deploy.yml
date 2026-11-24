@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '17 */6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -23,7 +25,45 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
+      - name: Restore last Scholar snapshot
+        uses: actions/cache/restore@v4
+        continue-on-error: true
+        with:
+          path: ${{ runner.temp }}/scholar-citations
+          key: scholar-citations-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: scholar-citations-v1-
+
+      - name: Setup Python for citation refresh
+        if: github.event_name != 'push'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Refresh Google Scholar citations
+        id: scholar-sync
+        if: github.event_name != 'push'
+        continue-on-error: true
+        timeout-minutes: 2
+        run: |
+          python3 -m pip install -r google_scholar_crawler/requirements.txt
+          SCHOLAR_OUTPUT_DIR="$RUNNER_TEMP/scholar-citations" python3 -m google_scholar_crawler.main
+
+      - name: Save the refreshed Scholar snapshot
+        if: steps.scholar-sync.outcome == 'success'
+        uses: actions/cache/save@v4
+        continue-on-error: true
+        with:
+          path: ${{ runner.temp }}/scholar-citations
+          key: scholar-citations-v1-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Include Scholar snapshot in the site
+        run: |
+          snapshot="$RUNNER_TEMP/scholar-citations/gs_data_shieldsio.json"
+          if [ -f "$snapshot" ]; then
+            cp "$snapshot" public/gs_data_shieldsio.json
+          fi
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

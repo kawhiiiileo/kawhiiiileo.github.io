@@ -3,7 +3,7 @@ import { conferenceServices, journalServices } from '@/data/profile';
 export function Services() {
   return (
     <>
-      <h2 className="section-heading">Services</h2>
+      <h2 id="services-heading" className="section-heading">Services</h2>
       {[
         { title: 'Conference Reviewer', services: conferenceServices },
         { title: 'Journal Reviewer', services: journalServices },

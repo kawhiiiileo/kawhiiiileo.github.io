@@ -18,6 +18,8 @@ export interface Paper {
   stars?: string;
   image?: string;
   imageAlt?: string;
+  authorship?: 'first' | 'co-first';
+  topic?: 'multimodal-acceleration' | 'multimodal-rl' | 'asynchronous-rl';
 }
 
 export interface NewsItem {
@@ -44,7 +46,8 @@ export const profile = {
   bio: "Direct-entry PhD student at HKUST (GZ), EPIC Lab. Working on multimodal acceleration, multimodal reinforcement learning, AI memory (RSI), and coding agents (RSI).",
   email: "kawhiiileo2@gmail.com",
   googleScholar: "https://scholar.google.com/citations?user=I0V2KAEAAAAJ&hl=zh-CN",
-  citations: 326,
+  citations: 337,
+  citationsSavedOn: "2026-11-24T15:55:54+08:00",
   github: "https://github.com/kawhiiiileo",
   location: "Guangzhou, China",
   avatar: `${import.meta.env.BASE_URL}avatar.png`,
@@ -80,6 +83,7 @@ export const profile = {
       title: "Multimodal Reinforcement Learning",
       works: [
         { label: "KAWHI", url: "https://kawhiiiileo.github.io/KAWHI_PAGE/" },
+        { label: "OVC", url: "https://kawhiiiileo.github.io/OVC_PAGE/" },
         { label: "Innovator-VL", url: "https://innovatorlm.github.io/Innovator-VL/" },
       ],
     },
@@ -176,6 +180,7 @@ export const conferencePapers: Paper[] = [
   },
   {
     badge: "ECCV-2026",
+    authorship: "first",
     image: "kawhi.png",
     imageAlt: "KAWHI method overview",
     authors: "Yuhang Han†, Yuyang Wu, Zhengbo Jiao, Yiyu Wang, Xuyang Liu, Shaobo Wang, Hanlin Xu, Xuming Hu, Linfeng Zhang✉",
@@ -183,6 +188,7 @@ export const conferencePapers: Paper[] = [
     venue: "European Conference on Computer Vision (ECCV)",
     note: "CCF B",
     links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2603.27375" },
       { label: "project page", url: "https://kawhiiiileo.github.io/KAWHI_PAGE/" },
     ],
   },
@@ -206,6 +212,7 @@ export const conferencePapers: Paper[] = [
     badge: "AAAI-2026",
     badgeUrl: "https://ojs.aaai.org/index.php/AAAI/article/view/33131",
     authors: "Yuhang Han*†, Xuyang Liu*, Pengxiang Ding, Donglin Wang, Honggang Chen, Qingsen Yan, Siteng Huang✉",
+    authorship: "co-first",
     title: "Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration",
     image: "ficoco.png",
     imageAlt: "FiCoCo token reduction framework",
@@ -225,6 +232,7 @@ export const conferencePapers: Paper[] = [
 export const journalPapers: Paper[] = [
   {
     badge: "TMLR-2026",
+    authorship: "co-first",
     image: "mapgd.png",
     imageAlt: "MAPGD multi-agent prompt optimization workflow",
     authors: "Yichen Han*, Yuhang Han*†, Bojun Liu, Zhengpeng Zhou, Zeng Zhang, Guanyu Liu, Yang Yang, Wenli Wang, Isaac N. Shi, Yunyan, Lewei He, Tianyu Shi✉",
@@ -239,6 +247,7 @@ export const journalPapers: Paper[] = [
   },
   {
     badge: "RS-2024",
+    authorship: "first",
     image: "luffd-method.png",
     imageAlt: "LUFFD-YOLO method: the proposed ESDC2f module with multi-head self-attention (Figure 5)",
     authors: "Y Han, B Duan, R Guan, G Yang, Z Zhen✉",
@@ -257,6 +266,7 @@ export const technicalReports: Paper[] = [
   {
     badge: "Technical Report",
     title: "Holographic Memory System (HMS)",
+    authorship: "first",
     image: "hms-main.png",
     imageAlt: "HMS main framework: memory intent planning, evidence reconstruction, and state compilation and response generation",
     venue: "Technical report",
@@ -284,13 +294,46 @@ export const technicalReports: Paper[] = [
 // Publications - Preprints
 export const preprints: Paper[] = [
   {
+    badge: "arXiv-2610.32324",
+    authorship: "co-first",
+    title: "From Visual Affinity to Learning Credit in Multimodal Reinforcement Learning",
+    authors: "Yuhang Han*, Dingning Liu*, Yujie Chen, Yaojie Zhang, Jingwei Song, Zequn Yang, Xuanming Shang, Li Ding, Zhijiang Guo✉, Linfeng Zhang✉",
+    venue: "arXiv:2610.32324",
+    image: "ovc.png",
+    imageAlt: "OVC framework for visual encoding, evidence calibration, and token-level credit allocation",
+    topic: "multimodal-rl",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2610.32324" },
+      { label: "project page", url: "https://kawhiiiileo.github.io/OVC_PAGE/" },
+      { label: "github", url: "https://github.com/kawhiiiileo/OVC" },
+    ],
+    stars: "kawhiiiileo/OVC",
+  },
+  {
+    badge: "arXiv-2607.01083",
+    title: "Staleness-Learning Rate Scaling Laws for Asynchronous RLHF",
+    image: "async-rlhf-curves.png",
+    imageAlt: "Qwen3-8B training reward at four learning rates with synchronization interval S=16, from Figure 3 of the revised paper",
+    authors: "Jingwei Song, Haofeng Xu, Jie Xiao, Chengke Bao, Jingwei Shi, Pengbin Feng, Weixun Wang, Yuhang Han, Chuan Wu, Linfeng Zhang, Bill Shi",
+    venue: "arXiv:2607.01083",
+    note: "Revised as Scaling Laws for Collapse in Asynchronous GRPO",
+    topic: "asynchronous-rl",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2607.01083v2" },
+      { label: "Latest revision", url: "https://arxiv.org/abs/2607.01083" },
+      { label: "Figure 3", url: "https://arxiv.org/html/2607.01083v3#S4.F3" },
+    ],
+  },
+  {
     badge: "arXiv-2606.01790",
+    authorship: "co-first",
     image: "star-kv.png",
     imageAlt: "STaR-KV spatio-temporal KV cache compression framework",
     authors: "Yuhang Han*†, Wenzheng Yang*, Yujie Chen, Xiangqi Jin, Yaojie Zhang, Siteng Huang, Linfeng Zhang✉",
     title: "STaR-KV: Spatio-Temporal Adaptive Re-weighting for KV Cache Compression in GUI Vision-Language Models",
     venue: "arXiv preprint arXiv:2606.01790",
     note: "Under review (ACL ARR 2026)",
+    topic: "multimodal-acceleration",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2606.01790" },
       { label: "github", url: "https://github.com/kawhiiiileo/STaR-KV" },

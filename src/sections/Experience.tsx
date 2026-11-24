@@ -3,12 +3,13 @@ import { experiences } from '@/data/profile';
 export function Experience() {
   return (
     <>
-      <h2 className="section-heading">Internship Experience</h2>
-      <ul className="experience-list">
+      <div className="section-header">
+        <h2 id="experience-heading" className="section-heading">Experience</h2>
+      </div>
+      <ul className="experience-list chapter-content">
         {experiences.map((exp) => (
           <li key={exp.institution} className="experience-item">
             <div className="experience-period">
-              {exp.period.includes('Present') && <span className="current-dot" aria-hidden="true" />}
               {exp.period}
             </div>
             <div className="experience-content">
